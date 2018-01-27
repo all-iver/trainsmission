@@ -27,8 +27,8 @@ public class DoubleDragonPC : MonoBehaviour {
         direction.x = Input.GetAxis("Horizontal");
         direction.y = Input.GetAxis("Vertical");
         direction = direction.normalized;
+        rb.velocity = Vector2.zero;
         rb.MovePosition(transform.position + (Vector3) direction * speed * Time.deltaTime);
-        // rb.velocity = direction * speed * Time.deltaTime;
         animator.SetBool("Grounded", true);
         animator.SetBool("Moving", direction != Vector2.zero);
         if (direction != Vector2.zero) {
