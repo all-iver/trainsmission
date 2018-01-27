@@ -11,8 +11,6 @@ public class DoubleDragonPC : MonoBehaviour {
     SpriteRenderer spriteRenderer;
     public SpriteRenderer hat;
     bool jumpingBetweenCars;
-    public float carJumpTime = 2;
-    public Vector2 carJumpDistance = new Vector2(6, 3);
 
 	// Use this for initialization
 	void Start () {
@@ -40,7 +38,7 @@ public class DoubleDragonPC : MonoBehaviour {
         }
 	}
 
-    public void DoCarJump(int direction) {
+    public void DoCarJump(int direction, float carJumpTime, Vector2 carJumpDistance) {
         if (jumpingBetweenCars)
             return;
         jumpingBetweenCars = true;
