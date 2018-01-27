@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 95210952646171634}
   - component: {fileID: 114351477003138686}
   - component: {fileID: 70890843116856188}
+  - component: {fileID: 114475889203007892}
   m_Layer: 15
   m_Name: Player
   m_TagString: Player
@@ -67,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1887594438991428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 1.11, z: 0}
+  m_LocalPosition: {x: -0.8, y: 1.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4361625685780226}
@@ -141,6 +142,19 @@ MonoBehaviour:
   gravityModifier: 1
   maxSpeed: 7
   jumpTakeOffSpeed: 7
+--- !u!114 &114475889203007892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887594438991428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c58b56e33eb4985b28425f82ad98ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minGroundNormalY: 0.65
+  gravityModifier: 1
 --- !u!212 &212302444734676952
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -227,5 +241,5 @@ SpriteRenderer:
   m_Size: {x: 1.07, y: 0.49}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
