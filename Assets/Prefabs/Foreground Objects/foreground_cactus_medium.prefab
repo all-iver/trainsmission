@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4055523785527860}
   - component: {fileID: 212104215169790862}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: foreground_cactus_medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
