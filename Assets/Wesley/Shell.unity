@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b441f30f5133b046a1c4fdad6f7f4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameSceneName: kavan
+  GameSceneName: wesley
   Animator: {fileID: 343464130}
 --- !u!1 &459328733
 GameObject:

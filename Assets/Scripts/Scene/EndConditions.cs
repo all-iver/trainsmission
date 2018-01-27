@@ -19,7 +19,7 @@ public class EndConditions : MonoBehaviour
 
     private void GotoShell()
     {
-        SceneManager.LoadSceneAsync(ShellSceneName);
+        BaseScene.Inst.GotoScene(ShellSceneName);
     }
 
     private void Update()

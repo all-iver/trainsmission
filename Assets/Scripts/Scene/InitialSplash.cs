@@ -25,13 +25,8 @@ public class InitialSplash : MonoBehaviour
     private void BeginLoad()
     {
         Animator.SetTrigger("FadeOut");
-        var op = SceneManager.LoadSceneAsync(GameSceneName);
+        BaseScene.Inst.GotoScene(GameSceneName);
         Loading = true;
-        op.completed += OnLoadFinished;
-    }
-
-    private void OnLoadFinished(AsyncOperation op)
-    {
     }
 
     private void Start()
