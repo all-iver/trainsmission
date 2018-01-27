@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4725493087590390}
   - component: {fileID: 212809738740128002}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: foreground_shrub_large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
