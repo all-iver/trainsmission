@@ -251,10 +251,14 @@ Prefab:
       propertyPath: far clip plane
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 1056362355848150, guid: 94de755377aa543f99501f63b1d67777, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94de755377aa543f99501f63b1d67777, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &343938117
+--- !u!1001 &1089434154
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -297,13 +301,26 @@ Prefab:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
-    - target: {fileID: 1523377472488894, guid: 45787cd7a2f6a4c3b816bb645bc892b0, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45787cd7a2f6a4c3b816bb645bc892b0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1333033731 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1122640041654794, guid: 161d6c0f012c74b968d3f28002ac9717,
+    type: 2}
+  m_PrefabInternal: {fileID: 1492224783}
+--- !u!114 &1333033732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1333033731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e64742081164abebc8092864bd8524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollRate: 10
 --- !u!1001 &1450840318
 Prefab:
   m_ObjectHideFlags: 0
@@ -348,21 +365,6 @@ Prefab:
       propertyPath: CameraTargets.Array.data[0].TargetTransform
       value: 
       objectReference: {fileID: 1492224784}
-    - target: {fileID: 20689944597744020, guid: 0e33614abacec44acad079d2c44c046b,
-        type: 2}
-      propertyPath: near clip plane
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 20689944597744020, guid: 0e33614abacec44acad079d2c44c046b,
-        type: 2}
-      propertyPath: far clip plane
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 20689944597744020, guid: 0e33614abacec44acad079d2c44c046b,
-        type: 2}
-      propertyPath: m_CullingMask.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e33614abacec44acad079d2c44c046b, type: 2}
   m_IsPrefabParent: 0
@@ -451,6 +453,10 @@ Prefab:
     - target: {fileID: 4104062948724252, guid: 85f1c7a9cb36641b689f4ddce9a2d640, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175219056146194, guid: 85f1c7a9cb36641b689f4ddce9a2d640, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85f1c7a9cb36641b689f4ddce9a2d640, type: 2}
