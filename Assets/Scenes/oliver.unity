@@ -152,6 +152,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 50184886124725824, guid: 00c936e9f44e04350a217e24bb95a861,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00c936e9f44e04350a217e24bb95a861, type: 2}
   m_IsPrefabParent: 0
@@ -160,6 +165,51 @@ Transform:
   m_PrefabParentObject: {fileID: 4979921353142436, guid: 00c936e9f44e04350a217e24bb95a861,
     type: 2}
   m_PrefabInternal: {fileID: 384817644}
+--- !u!1 &1434421642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1434421643}
+  - component: {fileID: 1434421644}
+  m_Layer: 0
+  m_Name: Cactus Scroller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1434421643
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1434421642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1434421644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1434421642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e841c5a93ef54c8eb4ae8684d1b8b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  minDistance: 5
+  speed: 0
+  grid: 1
+  width: 30
 --- !u!1001 &1712157839
 Prefab:
   m_ObjectHideFlags: 0
@@ -204,6 +254,46 @@ Prefab:
       propertyPath: CameraTargets.Array.data[0].TargetTransform
       value: 
       objectReference: {fileID: 904070117}
+    - target: {fileID: 20601060723287972, guid: 12b52de697c274734b055a6146ca89d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 20672740939209430, guid: 12b52de697c274734b055a6146ca89d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 20747488514435276, guid: 12b52de697c274734b055a6146ca89d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 20576833932797904, guid: 12b52de697c274734b055a6146ca89d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 20317284800362084, guid: 12b52de697c274734b055a6146ca89d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 20560492714665264, guid: 12b52de697c274734b055a6146ca89d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 20918473698812200, guid: 12b52de697c274734b055a6146ca89d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 20229684615983710, guid: 12b52de697c274734b055a6146ca89d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12b52de697c274734b055a6146ca89d2, type: 2}
   m_IsPrefabParent: 0
