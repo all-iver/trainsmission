@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Wesley/wesley.unity
     guid: 458bad3242c437d43b39a2aed2804c46
+  - enabled: 1
+    path: Assets/Scenes/kavan.unity
+    guid: db1dd91d018244ab7a323538006bc7a8
