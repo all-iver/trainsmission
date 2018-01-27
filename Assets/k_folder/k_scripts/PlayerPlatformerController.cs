@@ -24,6 +24,16 @@ public class PlayerPlatformerController : PhysicsObject
 
         move.x = Input.GetAxis("Horizontal");
 
+        if (move.x != 0.0f)
+        {
+            animator.SetInteger("Facing", move.x > 0.0f ? 1 : 0);
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
+        }
+
         if (Input.GetButtonDown("Jump") && grounded)
         {
             velocity.y = jumpTakeOffSpeed;
@@ -42,8 +52,7 @@ public class PlayerPlatformerController : PhysicsObject
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
 
-        animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetBool("Grounded", grounded);
 
         targetVelocity = move * maxSpeed;
     }
