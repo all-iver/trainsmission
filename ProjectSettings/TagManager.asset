@@ -23,7 +23,7 @@ TagManager:
   - player
   - sky_cloud_far
   - mg_tracks
-  - 
+  - foreground_objects
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Scrolling Foreground Objects
+    uniqueID: 2597688463
     locked: 0
