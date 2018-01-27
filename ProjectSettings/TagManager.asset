@@ -16,13 +16,13 @@ TagManager:
   - bg_back
   - bg_mid
   - bg_fore
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - sky_sky
+  - sky_cloud_mid
+  - sky_cloud_front_1
+  - sky_cloud_front_2
+  - player
+  - sky_cloud_far
+  - mg_tracks
   - 
   - 
   - 
