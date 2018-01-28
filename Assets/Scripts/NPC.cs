@@ -89,19 +89,19 @@ public class NPC : MonoBehaviour {
         speechIcon1 = SpeechHelper.UnknownSprite;
         speechIcon2 = SpeechHelper.UnknownSprite;
 
-        float certainty = 1.0f;
+
+        bool isCulprit = ID == NPCTracker.Culprit;
+        bool sameTraincar = NPCTracker.FindCulprit().GetTraincar() == GetTraincar();
+
+        //base certainty
+        float certainty = sameTraincar ? 1.0f : 0.9f;
 
         //accuse somebody
-        float rng_wrongAccusation;
-        if (ID == NPCTracker.Culprit)
-        {
-            rng_wrongAccusation = 1.0f;
-            certainty = 1.0f;
-        }
-        else
-        {
-            rng_wrongAccusation = Random.Range(0.0f, 1.0f);
-        }
+        float rng_wrongAccusation =
+            isCulprit ? 1.0f :
+            sameTraincar ? Random.Range(0.5f, 1.0f) :
+            Random.Range(0.0f, 1.0f)
+        ;
 
         if (rng_wrongAccusation < 0.8f)
         {
@@ -109,24 +109,31 @@ public class NPC : MonoBehaviour {
         }
         else
         {
-            Accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
+            Accused = NPCTracker.FindNPC(NPCTracker.RedHerring);
             certainty -= 0.4f;
         }
 
-        if (Accused == this)
-            Accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
-
-        if (Accused == null)
-            Accused = this;
+        //should never happen; just for safety
+        if (Accused == this || Accused == null)
+            Accused = NPCTracker.FindNPC(NPCTracker.RedHerring);
 
         //first icon is accusee
-        float rng_vagueness = Random.Range(0.0f, 1.0f);
-        if (rng_vagueness < 0.3f)
+        float rng_vagueness =
+            sameTraincar ? Random.Range(0.0f, 0.6f) :
+            Random.Range(0.0f, 1.0f)
+        ;
+        if (rng_vagueness < 0.4f)
+        {
             speechIcon1 = SpeechHelper.GetIcon_Person(Accused.ID);
-        else if (rng_vagueness < 0.7f)
+        }
+        else if (rng_vagueness < 0.6f)
+        {
             speechIcon1 = SpeechHelper.GetIcon_Gender(Accused.ID);
+        }
         else
+        {
             speechIcon1 = SpeechHelper.GetIcon_Car(Accused.GetTraincar());
+        }
 
         //second icon is certainty
         float rng_certainty = Random.Range(0.0f, certainty);

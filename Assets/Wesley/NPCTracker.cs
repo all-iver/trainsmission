@@ -37,12 +37,16 @@ public class NPCTracker : MonoBehaviour
     }
 
     public static ID Culprit;
+    public static ID RedHerring;
     public static ID Accused;
 
     public static void RollCulprit()
     {
-        Culprit = (ID)Random.Range(0, (int)ID.Count);
-        Debug.Log("Culprit is " + Culprit.ToString());
+        Culprit = GetRandomNPCID();
+        RedHerring = Culprit;
+        while (RedHerring == Culprit)
+            RedHerring = GetRandomNPCID();
+        Debug.Log(string.Format("Culprit is {0}, Red Herring is {1}", Culprit, RedHerring));
     }
 
     public static bool AccusedCorrectly()
