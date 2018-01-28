@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219a9ff199816294f9301861f0302650, type: 3}
+  m_Name: SpeechCatalog_Directions
+  m_EditorClassIdentifier: 
+  Left: {fileID: 21300000, guid: 587d41b35055b4af095fe67ce72d49a1, type: 3}
+  Right: {fileID: 21300000, guid: c3df6e814a2fc431ba8a0ae6c8c34655, type: 3}

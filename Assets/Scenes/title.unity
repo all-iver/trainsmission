@@ -1101,6 +1101,56 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1256708987}
+--- !u!1 &1297316981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1297316983}
+  - component: {fileID: 1297316982}
+  m_Layer: 0
+  m_Name: SpeechHelperInitializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1297316982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297316981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5778292bb29ecf4418805f193ebb4d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeechCatalog_Traincars_Cached: {fileID: 11400000, guid: a872a591af3d87c418e213bafdc4bcc2,
+    type: 2}
+  SpeechCatalog_People_Cached: {fileID: 11400000, guid: fdc4b744f17126841a7329c9f89bdf38,
+    type: 2}
+  SpeechCatalog_Directions_Cached: {fileID: 11400000, guid: 62bbd2d595fda574f84df05881452836,
+    type: 2}
+  SpeechCatalog_Certainty_Cached: {fileID: 11400000, guid: ec2a76dce90fe044b88c76b9e1a301de,
+    type: 2}
+  UnknownSprite_Cached: {fileID: 21300000, guid: 4e64cd412e85a498bab2dc063d1cb38a,
+    type: 3}
+--- !u!4 &1297316983
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297316981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 651.611, y: 279.44537, z: -7.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1396886547
 GameObject:
   m_ObjectHideFlags: 0
