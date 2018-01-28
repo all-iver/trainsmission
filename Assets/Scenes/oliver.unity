@@ -16248,10 +16248,17 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 2061983352}
   - component: {fileID: 2061983353}
   m_Layer: 19
   m_Name: hatch_base
+=======
+  - component: {fileID: 1849752758}
+  - component: {fileID: 1849752759}
+  m_Layer: 0
+  m_Name: NPCTracker
+>>>>>>> Integrations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

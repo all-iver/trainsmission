@@ -7,7 +7,7 @@ using DG.Tweening;
 public class GameOverScene : MonoBehaviour {
 
     public string titleScene = "title";
-    GameOverState gos;
+    // GameOverState gos;
     public Image npc;
     public GameObject cell;
     int state;
@@ -17,14 +17,14 @@ public class GameOverScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        gos = FindObjectOfType<GameOverState>();
-        if (!gos) {
-            gos = new GameObject("Game Over State").AddComponent<GameOverState>();
-            gos.theAccused = testSprite;
-        }
-        npc.sprite = gos.theAccused;
-        Destroy(gos);
-        gos = null;
+        // gos = FindObjectOfType<GameOverState>();
+        // if (!gos) {
+        //     gos = new GameObject("Game Over State").AddComponent<GameOverState>();
+        //     gos.theAccused = testSprite;
+        // }
+        // npc.sprite = gos.theAccused;
+        // Destroy(gos);
+        // gos = null;
 	}
 
     void TweenCell() {

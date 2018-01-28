@@ -21,11 +21,14 @@ public class NPCTracker : MonoBehaviour
     [SerializeField] private NPCSpriteCatalog SpriteCatalog;
     [SerializeField] private NPCSpriteCatalog_Nobodies Nobodies;
 
+    public bool reroll = false;
+
     private void Awake()
     {
         NPCSpriteCatalog.Inst = SpriteCatalog;
         NPCSpriteCatalog_Nobodies.Inst = Nobodies;
-        RollCulprit();
+        if (reroll)
+            RollCulprit();
     }
 
     public static ID Culprit;
