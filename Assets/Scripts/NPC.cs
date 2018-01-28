@@ -16,9 +16,12 @@ public class NPC : MonoBehaviour {
     public Collider2D homeCollider;
     SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
-    GameObject speechBubble;
     public Vector2 speechOffset = new Vector2(0.36f, 3.34f);
     public Vector2 catSpeechOffset = new Vector2(0.65f, 0.89f);
+    int modifierIcon;
+    int personIcon;
+    SpeechBubble speechBubble;
+    bool stopped = false;
 
     bool CheckBounds(Vector2 dest) {
         return homeCollider.OverlapPoint(dest);
@@ -53,15 +56,33 @@ public class NPC : MonoBehaviour {
             Debug.Log("NPC can't move without a home collider");
             return;
         }
+        SpeechSpawner ss = FindObjectOfType<SpeechSpawner>();
+        modifierIcon = Random.Range(0, ss.modifierIcons.Length);
+        personIcon = Random.Range(0, ss.personIcons.Length);
         MoveNext();
     }
 
-    void OnTriggerEnter2D() {
-        if (speechBubble)
+    public void StopAndSpeak() {
+        if (stopped)
             return;
+        if (sequence != null) {
+            sequence.Kill();
+            sequence = null;
+        }
+        stopped = true;
         Vector2 off = speechOffset;
         if (spriteRenderer.sprite.name == "cat")
             off = catSpeechOffset;
-        speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble((Vector2) transform.position + off, transform, 0, 0);
+        speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble((Vector2) transform.position + off, transform,
+                modifierIcon, personIcon);
+    }
+
+    public void EndSpeaking() {
+        if (speechBubble) {
+            speechBubble.Close();
+            speechBubble = null;
+        }
+        stopped = false;
+        MoveNext();
     }
 }
