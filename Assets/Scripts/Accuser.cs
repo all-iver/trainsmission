@@ -41,8 +41,10 @@ public class Accuser : MonoBehaviour {
     }
 
     void AccuseCurrent() {
-        if (accusing || !current)
+        if (accusing || !current || current.ID == NPCTracker.ID.None)
             return;
+        NPCTracker.Accused = current.ID;
+        NPCTracker.AccusedCorrectly();
         current.GetAccused(transform.position);
         speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble(speechOffset.position, transform, accuse: true);
         accusing = true;

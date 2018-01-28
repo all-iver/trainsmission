@@ -34,6 +34,13 @@ public class NPCTracker : MonoBehaviour
     public static void RollCulprit()
     {
         Culprit = (ID)Random.Range(0, (int)ID.Count);
+        Debug.Log("Culprit is " + Culprit.ToString());
+    }
+
+    public static bool AccusedCorrectly()
+    {
+        Debug.Log(string.Format("Accused {0}, culprit was {1}", Accused, Culprit));
+        return Culprit == Accused;
     }
 
     public static Sprite GetSprite(ID id)
