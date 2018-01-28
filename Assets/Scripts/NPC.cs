@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour {
     public float maxDistance = 10;
     public Collider2D homeCollider;
     SpriteRenderer spriteRenderer;
-    public Sprite[] sprites;
+    public NPCTracker.ID ID;
     public Vector2 speechOffset = new Vector2(0.36f, 3.34f);
     public Vector2 catSpeechOffset = new Vector2(0.65f, 0.89f);
     int modifierIcon;
@@ -52,7 +52,15 @@ public class NPC : MonoBehaviour {
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
+        if (ID == NPCTracker.ID.None)
+        {
+            spriteRenderer.sprite = NPCTracker.GetSprite_Nobody();
+        }
+        else
+        {
+            spriteRenderer.sprite = NPCTracker.GetSprite(ID);
+        }
+
         if (!homeCollider) {
             Debug.Log("NPC can't move without a home collider");
             return;
