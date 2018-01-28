@@ -22,13 +22,6 @@ public class PigeonScript : MonoBehaviour {
         mySequence.Append(transform.DOMove(new Vector3(-30, 4, 0), 10f));
 
     }
-       
-
-//Sequence mySequence = DOTween.Sequence();
-   //     mySequence.Append(transform.DOMoveX(45, 1))
-    //      .Append(transform.DORotate(new Vector3(0, 180, 0), 1))
-      //    .PrependInterval(1)
-    //      .Insert(0, transform.DOScale(new Vector3(3, 3, 3), mySequence.Duration()));
-
-
 }
+
+
