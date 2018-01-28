@@ -52,3 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollRate: 30
+  player: {fileID: 0}
+  yOffset: 0.15

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4104062948724252}
   - component: {fileID: 20689104696156656}
   - component: {fileID: 124254383936917794}
+  - component: {fileID: 114906043984189992}
   m_Layer: 0
   m_Name: ForegroundCamera
   m_TagString: Untagged
@@ -77,6 +78,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &114906043984189992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1175219056146194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e64742081164abebc8092864bd8524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollRate: 30
+  player: {fileID: 0}
+  yOffset: 1.35
 --- !u!124 &124254383936917794
 Behaviour:
   m_ObjectHideFlags: 1
