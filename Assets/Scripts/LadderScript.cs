@@ -13,11 +13,22 @@ public class LadderScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && (Input.GetAxis("Vertical") > 0.0f))
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("PlayerHitsLadder and moves up");
+            Debug.Log("PlayerHitsLadder");
             animator = collision.GetComponent<Animator>();
-            animator.SetBool("Climbing", true);
+
+            if (Input.GetAxis("Vertical") > 0.0f)
+            {
+                Debug.Log("PlayerMovesUP");
+                animator.SetBool("Climbing", true);
+            }
+
+            if (Input.GetAxis("Vertical") < 0.0f)
+            {
+                Debug.Log("PlayerMovesDOWN");
+                animator.SetBool("Climbing", true);
+            }
         }
     }
 
