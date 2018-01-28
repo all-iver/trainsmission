@@ -495,105 +495,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &128760043
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 128760047}
-  - component: {fileID: 128760046}
-  - component: {fileID: 128760045}
-  - component: {fileID: 128760044}
-  m_Layer: 0
-  m_Name: pigeon cage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &128760044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128760043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: face8689e612b4065adf1a2856176ade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!136 &128760045
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128760043}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.325
-  m_Height: 0.9033915
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.08830428, z: 0}
---- !u!212 &128760046
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128760043}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a79441f7c9e743b79603c835744b1a4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.65, y: 1.08}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
---- !u!4 &128760047
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128760043}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.38, y: -1.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &129396106
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,8 +869,10 @@ GameObject:
   - component: {fileID: 245442839}
   - component: {fileID: 245442841}
   - component: {fileID: 245442840}
+  - component: {fileID: 245442842}
+  - component: {fileID: 245442843}
   m_Layer: 19
-  m_Name: pigeon_stand
+  m_Name: CagedPigeon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -982,11 +885,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 245442838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.7150807, y: 3.050975, z: 0.0546875}
+  m_LocalPosition: {x: -10.41, y: -1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1858729691}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &245442840
 Animator:
@@ -1036,10 +939,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1313835921
+  m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6cf6ac162c5bc48298ad6041fcf3259d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a79441f7c9e743b79603c835744b1a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1049,6 +952,43 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!61 &245442842
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 245442838}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.8471408}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.65, y: 1.08}
+    newSize: {x: 0.49, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.65, y: 2.7742815}
+  m_EdgeRadius: 0
+--- !u!114 &245442843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 245442838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: face8689e612b4065adf1a2856176ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pigeon: {fileID: 1897221569701018, guid: 924e0cf6a919b482ba36d79525e91b90, type: 2}
 --- !u!1 &248403102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,6 +2077,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &472081869
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2293,6 +2235,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &484055855
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2476,6 +2420,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &530803941
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3794,6 +3740,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &821366548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4309,6 +4257,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &983369696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5354,6 +5304,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1227196126
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5646,6 +5598,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1290682282
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6589,6 +6543,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1483189948
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7703,6 +7659,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1690483852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8018,6 +7976,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1760234302
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8436,35 +8396,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1716005113}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1858729690
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1858729691}
-  m_Layer: 19
-  m_Name: Pigeon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1858729691
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1858729690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.38, y: -4.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 245442839}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1878434473
 GameObject:
@@ -9493,6 +9424,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &2044967212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9646,6 +9579,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   - {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   - {fileID: 21300000, guid: 808326ef687c744769c8b4d21551f182, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &2066081571
 SpriteRenderer:
   m_ObjectHideFlags: 0
