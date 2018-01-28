@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4576164073251020}
   - component: {fileID: 212510976340999448}
   - component: {fileID: 95934769323772010}
+  - component: {fileID: 114070605750737702}
   m_Layer: 15
   m_Name: Pigeon
   m_TagString: Untagged
@@ -58,6 +59,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114070605750737702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897221569701018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f38d3cb19b9407e8c59a1b5e4a08c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 0}
 --- !u!212 &212510976340999448
 SpriteRenderer:
   m_ObjectHideFlags: 1
