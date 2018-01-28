@@ -6,8 +6,10 @@ public class Scrollyman : MonoBehaviour {
 
     public GameObject prefab;
     List<GameObject> instances = new List<GameObject>();
-    [Range(0, 1)]
-    public float threshold = 0.8f;
+    [Range(1, 5)]
+    public float scale = 2;
+    [Range(0, 5)]
+    public float threshold = 1.5f;
     float distanceTillNext;
     public float width = 30;
     [Range(0.1f, 100)]
@@ -26,7 +28,7 @@ public class Scrollyman : MonoBehaviour {
         grid.cellSize = new Vector2(step, step);
         if (!cam)
             cam = Camera.main;
-        seed = Random.Range(10f, 999f);
+        seed = Random.Range(100f, 110f);
 	}
 
     void SpawnInstance(float x) {
@@ -62,9 +64,9 @@ public class Scrollyman : MonoBehaviour {
         float right = p.x + width / 2;
         float nx = left;
         while (nx < right) {
-            Vector3 pos = grid.CellToWorld(grid.WorldToCell(new Vector3(nx, 5, p.z)));
-            float v = Mathf.PerlinNoise(pos.x * seed, pos.y * seed);
-            if (v > threshold)
+            Vector3 pos = grid.CellToWorld(grid.WorldToCell(new Vector3(nx, grid.transform.position.y, grid.transform.position.z)));
+            float v = Mathf.PerlinNoise(pos.x * seed, 5.2563f);
+            if (v * scale > threshold)
                 if (!InstanceExists(pos.x))
                     SpawnInstance(pos.x);
             nx += step;
