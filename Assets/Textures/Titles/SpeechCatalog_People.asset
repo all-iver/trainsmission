@@ -21,5 +21,5 @@ MonoBehaviour:
   Conductor: {fileID: 21300000, guid: 1f764ea33f0194a60bbb652669290826, type: 3}
   Prospector: {fileID: 21300000, guid: e3487deed5ada4f6a96416f7165c37e9, type: 3}
   Apple: {fileID: 21300000, guid: 78e418dd0bd06474ebf82317a0d8230c, type: 3}
-  Overalls: {fileID: 21300000, guid: cbfedbd1745ee47dc8b4baaecc414154, type: 3}
+  Overalls: {fileID: 21300000, guid: 94103bcff26a9ed42b01b72298fb93b2, type: 3}
   WhiteDress: {fileID: 21300000, guid: fc66d2609f9c640ca986cd0f40ea8d67, type: 3}
