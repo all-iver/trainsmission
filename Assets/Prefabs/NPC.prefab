@@ -95,6 +95,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d6f5512afc2da4e13b6b605b6a273eef, type: 3}
   - {fileID: 21300000, guid: aede578f0f7764c62b96d6bca994cd93, type: 3}
   speechOffset: {x: 0.36, y: 3.34}
+  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!114 &114530935011814772
 MonoBehaviour:
   m_ObjectHideFlags: 1
