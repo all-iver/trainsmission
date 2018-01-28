@@ -62,7 +62,7 @@ public class Scrollyman : MonoBehaviour {
         float right = p.x + width / 2;
         float nx = left;
         while (nx < right) {
-            Vector3 pos = grid.CellToWorld(grid.WorldToCell(new Vector3(nx, p.y, p.z)));
+            Vector3 pos = grid.CellToWorld(grid.WorldToCell(new Vector3(nx, 5, p.z)));
             float v = Mathf.PerlinNoise(pos.x * seed, pos.y * seed);
             if (v > threshold)
                 if (!InstanceExists(pos.x))

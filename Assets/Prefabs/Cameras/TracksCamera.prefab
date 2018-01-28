@@ -116,7 +116,7 @@ MonoBehaviour:
     TargetInfluenceV: 0
     TargetOffset: {x: 0, y: 0}
   - TargetTransform: {fileID: 0}
-    TargetInfluenceH: 0
+    TargetInfluenceH: 1
     TargetInfluenceV: 1
     TargetOffset: {x: 0, y: 0}
   CenterTargetOnStart: 0
