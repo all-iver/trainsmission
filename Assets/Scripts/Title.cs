@@ -14,7 +14,7 @@ public class Title : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.anyKeyDown) {
+        if (Input.GetButtonDown("Jump")) {
             count ++;
             if (count < cards.Length)
                 cards[count].SetActive(true);

@@ -12,7 +12,7 @@ public class GameOverScene : MonoBehaviour {
     public GameObject yourCell, theirCell;
     int state;
     public Sprite testSprite;
-    public GameObject bubble;
+    public GameObject bubble, catBubble;
     public Tweener tweener;
     public GameObject winCard, loseCard, finCard;
 
@@ -23,6 +23,8 @@ public class GameOverScene : MonoBehaviour {
         yourCell.SetActive(false);
         theirCell.SetActive(false);
         finCard.SetActive(false);
+        bubble.gameObject.SetActive(NPCTracker.Accused != NPCTracker.ID.Cat);
+        catBubble.gameObject.SetActive(NPCTracker.Accused == NPCTracker.ID.Cat);
         // gos = FindObjectOfType<GameOverState>();
         // if (!gos) {
         //     gos = new GameObject("Game Over State").AddComponent<GameOverState>();
@@ -49,10 +51,11 @@ public class GameOverScene : MonoBehaviour {
     void Update() {
         if (tweener != null)
             return;
-        if (Input.anyKeyDown) {
+        if (Input.GetButtonDown("Jump")) {
             state ++;
             if (state == 1) {
                 bubble.gameObject.SetActive(false);
+                catBubble.gameObject.SetActive(false);
                 TweenCell();
             }
             if (state == 2) {
