@@ -19,9 +19,6 @@ public class NPC : MonoBehaviour {
     public Vector2 speechOffset = new Vector2(0.36f, 3.34f);
     public Vector2 catSpeechOffset = new Vector2(0.65f, 0.89f);
 
-    Sprite speechIcon1;
-    Sprite speechIcon2;
-
     SpeechBubble speechBubble;
     bool stopped = false;
     bool accused = false;
@@ -72,19 +69,48 @@ public class NPC : MonoBehaviour {
         MoveNext();
     }
 
+    public SpeechHelper.TraincarID GetTraincar()
+    {
+        var traincar = GetComponentInParent<Traincar>();
+        return
+            traincar == null
+            ? SpeechHelper.TraincarID.Caboose
+            : traincar.ID
+        ;
+    }
+
     #region speech AI
+    Sprite speechIcon1;
+    Sprite speechIcon2;
+    NPC Accused;
+
     private void InitSpeech()
     {
         speechIcon1 = SpeechHelper.UnknownSprite;
         speechIcon2 = SpeechHelper.UnknownSprite;
 
-        float rng = Random.Range(0.0f, 1.0f);
+        float rng_wrongAccusation = Random.Range(0.0f, 1.0f);
 
-        if (rng < 0.8f)
-            speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.Culprit);
+        //accuse somebody
+        if (rng_wrongAccusation < 0.8f)
+            Accused = NPCTracker.FindCulprit();
         else
-            speechIcon1 = SpeechHelper.GetIcon_Person_Random();
+            Accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
 
+        if (Accused == this)
+            Accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
+
+        if (Accused == null)
+            Accused = this;
+
+        //first icon is accusee
+        float rng_vagueness = Random.Range(0.0f, 1.0f);
+        if (rng_vagueness < 0.3f)
+            speechIcon1 = SpeechHelper.GetIcon_Person(Accused.ID);
+        else
+            speechIcon1 = SpeechHelper.GetIcon_Car(Accused.GetTraincar());
+
+        //second icon is direction
         if (NPCTracker.FindCulprit() != null)
             speech2IsDirection = true;
         else
@@ -98,14 +124,12 @@ public class NPC : MonoBehaviour {
 
         if (speech1IsDirection)
         {
-            var culprit = NPCTracker.FindCulprit();
-            speechIcon1 = SpeechHelper.GetIcon_Direction(culprit.transform.position.x - transform.position.x);
+            speechIcon1 = SpeechHelper.GetIcon_Direction(Accused.transform.position.x - transform.position.x);
         }
 
         if (speech2IsDirection)
         {
-            var culprit = NPCTracker.FindCulprit();
-            speechIcon2 = SpeechHelper.GetIcon_Direction(culprit.transform.position.x - transform.position.x);
+            speechIcon2 = SpeechHelper.GetIcon_Direction(Accused.transform.position.x - transform.position.x);
         }
     }
     #endregion

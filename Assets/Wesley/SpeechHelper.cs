@@ -63,7 +63,7 @@ public class SpeechHelper : MonoBehaviour
 
     public static Sprite GetIcon_Person_Random()
     {
-        return GetIcon_Person((NPCTracker.ID)Random.Range(0, (int)NPCTracker.ID.Count));
+        return GetIcon_Person(NPCTracker.GetRandomNPCID());
     }
 
     public static Sprite GetIcon_Person(NPCTracker.ID id)

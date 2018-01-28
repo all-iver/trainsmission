@@ -79,14 +79,24 @@ public class NPCTracker : MonoBehaviour
         ];
     }
 
-    public static NPC FindCulprit()
+    public static ID GetRandomNPCID()
+    {
+        return (ID)Random.Range(0, (int)NPCTracker.ID.Count);
+    }
+
+    public static NPC FindNPC(ID id)
     {
         var npcs = GameObject.FindObjectsOfType<NPC>();
         foreach (var npc in npcs)
         {
-            if (npc.ID == Culprit)
+            if (npc.ID == id)
                 return npc;
         }
         return null;
+    }
+
+    public static NPC FindCulprit()
+    {
+        return FindNPC(Culprit);
     }
 }
