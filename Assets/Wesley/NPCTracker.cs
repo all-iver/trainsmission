@@ -67,4 +67,15 @@ public class NPCTracker : MonoBehaviour
             Random.Range(0, NPCSpriteCatalog_Nobodies.Inst.Sprites.Length)
         ];
     }
+
+    public static NPC FindCulprit()
+    {
+        var npcs = GameObject.FindObjectsOfType<NPC>();
+        foreach (var npc in npcs)
+        {
+            if (npc.ID == Culprit)
+                return npc;
+        }
+        return null;
+    }
 }

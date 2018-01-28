@@ -8,21 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/title.unity
     guid: 72d1d52239df441aabc864998f7e7357
-  - enabled: 0
-    path: Assets/Wesley/BaseScene.unity
-    guid: b035635ef66b3ea4f8ff5e0d06094e7b
-  - enabled: 0
-    path: Assets/Wesley/wesley.unity
-    guid: 458bad3242c437d43b39a2aed2804c46
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Wesley/Shell.unity
-    guid: 78b0307abfd3189458caab68c907afe0
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: 17d90b6f37f944ecfb563b7f2590db0f

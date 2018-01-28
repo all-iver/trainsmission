@@ -18,8 +18,8 @@ public class NPC : MonoBehaviour {
     public NPCTracker.ID ID;
     public Vector2 speechOffset = new Vector2(0.36f, 3.34f);
     public Vector2 catSpeechOffset = new Vector2(0.65f, 0.89f);
-    int modifierIcon;
-    int personIcon;
+    Sprite speechIcon1;
+    Sprite speechIcon2;
     SpeechBubble speechBubble;
     bool stopped = false;
     bool accused = false;
@@ -66,14 +66,28 @@ public class NPC : MonoBehaviour {
             return;
         }
         SpeechSpawner ss = FindObjectOfType<SpeechSpawner>();
-        modifierIcon = Random.Range(0, ss.modifierIcons.Length);
-        personIcon = Random.Range(0, ss.personIcons.Length);
+        
         MoveNext();
+    }
+
+    private void UpdateSpeech()
+    {
+        speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.Culprit);
+        var culprit = NPCTracker.FindCulprit();
+        if (culprit != null)
+        {
+            speechIcon2 = SpeechHelper.GetIcon_Direction(culprit.transform.position.x - transform.position.x);
+        }
+        else
+        {
+            speechIcon2 = SpeechHelper.GetIcon_Certainty(false);
+        }
     }
 
     public void StopAndSpeak(Vector2 playerPos) {
         if (stopped)
             return;
+
         float dir = transform.position.x - playerPos.x;
         spriteRenderer.flipX = dir < 0 ? false : true;
         if (sequence != null) {
@@ -84,8 +98,10 @@ public class NPC : MonoBehaviour {
         Vector2 off = speechOffset;
         if (spriteRenderer.sprite.name == "cat")
             off = catSpeechOffset;
+
+        UpdateSpeech();
         speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble((Vector2) transform.position + off, transform,
-                modifierIcon, personIcon);
+                speechIcon1, speechIcon2);
     }
 
     public void BecomeAccused(Vector2 playerPos) {

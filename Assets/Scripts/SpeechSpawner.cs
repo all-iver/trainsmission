@@ -11,7 +11,7 @@ public class SpeechSpawner : MonoBehaviour {
     public Sprite[] personIcons;
     public Sprite accuseSprite;
 
-    public SpeechBubble SpawnBubble(Vector2 pos, Transform parent, int modifierIcon = -1, int personIcon = -1, bool accuse = false) {
+    public SpeechBubble SpawnBubble(Vector2 pos, Transform parent, Sprite icon1 = null, Sprite icon2 = null, bool accuse = false) {
         GameObject bubble = Instantiate(speechBubble).gameObject;
         bubble.transform.position = pos;
         bubble.transform.SetParent(parent);
@@ -26,13 +26,11 @@ public class SpeechSpawner : MonoBehaviour {
             rt.Find("Panel").Find("Right Slot").gameObject.SetActive(false);
         } else {
             image = rt.Find("Panel").Find("Left Slot").GetComponent<Image>();
-            modifierIcon = modifierIcon == -1 ? Random.Range(0, modifierIcons.Length) : modifierIcon;
-            image.sprite = modifierIcons[modifierIcon];
+            image.sprite = icon1;
             image.preserveAspect = true;
 
             image = rt.Find("Panel").Find("Right Slot").GetComponent<Image>();
-            personIcon = personIcon == -1 ? Random.Range(0, personIcons.Length) : personIcon;
-            image.sprite = personIcons[personIcon];
+            image.sprite = icon2;
             image.preserveAspect = true;
 
             rt.Find("Panel").Find("Center Slot").gameObject.SetActive(false);
