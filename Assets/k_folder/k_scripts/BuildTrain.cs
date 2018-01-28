@@ -24,7 +24,7 @@ public class BuildTrain : MonoBehaviour {
 
         for (int i = 0; i < size; i++)
         {
-            currentTrain = trains[Random.Range(0, Elements.Length)];
+            currentTrain = trains[Random.Range(0, trains.Length)];
         }
 
     }

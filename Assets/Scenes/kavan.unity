@@ -575,6 +575,34 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1269972902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1269972903}
+  m_Layer: 0
+  m_Name: Trains
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1269972903
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1269972902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.601177, y: -2.9549356, z: -0.00390625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532328769
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +675,54 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1555b32accac64a1d9750e640939eb91, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1628769039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1628769041}
+  - component: {fileID: 1628769040}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1628769040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1628769039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555279d0d4711401eb5981e909f5f9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trains:
+  - {fileID: 1678682322558084, guid: 7da475556c0a34901aa936f1375d87cd, type: 2}
+  - {fileID: 1088912738219942, guid: e1ca93819c039402cb86bd084507f92e, type: 2}
+  - {fileID: 1335928172667666, guid: afb9d4f2b306c44329b2a5836b4761e6, type: 2}
+  - {fileID: 1009957185303812, guid: 555b4fcb689664a0aac8fb65146f786d, type: 2}
+  caboose: {fileID: 1072601211945316, guid: edaf357c3bd38485ca83939cb9ee351a, type: 2}
+  engine: {fileID: 1744259302845708, guid: 159435aace28348e7995acbe621a7ed5, type: 2}
+  trainsHolder: {fileID: 1269972902}
+--- !u!4 &1628769041
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1628769039}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.601177, y: -2.9549356, z: -0.00390625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2086452477 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20197626178741502, guid: aabd187eff7494b11a9c68474cc55737,
