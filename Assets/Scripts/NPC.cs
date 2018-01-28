@@ -16,6 +16,9 @@ public class NPC : MonoBehaviour {
     public Collider2D homeCollider;
     SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
+    GameObject speechBubble;
+    public Vector2 speechOffset = new Vector2(0.36f, 3.34f);
+    public Vector2 catSpeechOffset = new Vector2(0.65f, 0.89f);
 
     bool CheckBounds(Vector2 dest) {
         return homeCollider.OverlapPoint(dest);
@@ -51,5 +54,14 @@ public class NPC : MonoBehaviour {
             return;
         }
         MoveNext();
+    }
+
+    void OnTriggerEnter2D() {
+        if (speechBubble)
+            return;
+        Vector2 off = speechOffset;
+        if (spriteRenderer.sprite.name == "cat")
+            off = catSpeechOffset;
+        speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble((Vector2) transform.position + off, transform, 0, 0);
     }
 }
