@@ -9,6 +9,19 @@ public class Accuser : MonoBehaviour {
     SpeechBubble speechBubble;
     public Transform speechOffset;
 
+    public bool IsAccusing() {
+        return accusing;
+    }
+
+    // void AccuseNearest() {
+    //     foreach (Collider2D coll in Physics2D.OverlapBoxAll((Vector2) transform.position, new Vector2(1, 1), 0)) {
+    //         NPC npc = coll.gameObject.GetComponent<NPC>();
+    //         if (!npc)
+    //             continue;
+    //         // Debug.Log(npc
+    //     }
+    // }
+
     void OnTriggerEnter2D(Collider2D other) {
         if (current)
             return;
@@ -17,10 +30,6 @@ public class Accuser : MonoBehaviour {
             return;
         current = npc;
         current.StopAndSpeak(transform.position);
-    }
-
-    public bool IsAccusing() {
-        return accusing;
     }
 
     void OnTriggerExit2D(Collider2D other) {
@@ -52,7 +61,7 @@ public class Accuser : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Jump"))
             AccuseCurrent();
     }
 
