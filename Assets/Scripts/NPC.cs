@@ -103,14 +103,18 @@ public class NPC : MonoBehaviour {
             Random.Range(0.0f, 1.0f)
         ;
 
-        if (rng_wrongAccusation < 0.8f)
+        if (rng_wrongAccusation < 0.7f)
         {
             Accused = NPCTracker.FindCulprit();
+        }
+        else if (rng_wrongAccusation < 0.8)
+        {
+            accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
         }
         else
         {
             Accused = NPCTracker.FindNPC(NPCTracker.RedHerring);
-            certainty -= 0.4f;
+            certainty -= 0.3f;
         }
 
         //should never happen; just for safety
