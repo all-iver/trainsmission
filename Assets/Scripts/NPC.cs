@@ -89,13 +89,29 @@ public class NPC : MonoBehaviour {
         speechIcon1 = SpeechHelper.UnknownSprite;
         speechIcon2 = SpeechHelper.UnknownSprite;
 
-        float rng_wrongAccusation = Random.Range(0.0f, 1.0f);
+        float certainty = 0.9f;
 
         //accuse somebody
-        if (rng_wrongAccusation < 0.8f)
-            Accused = NPCTracker.FindCulprit();
+        float rng_wrongAccusation;
+        if (ID == NPCTracker.Culprit)
+        {
+            rng_wrongAccusation = 1.0f;
+            certainty = 1.0f;
+        }
         else
+        {
+            rng_wrongAccusation = Random.Range(0.0f, 1.0f);
+        }
+
+        if (rng_wrongAccusation < 0.8f)
+        {
+            Accused = NPCTracker.FindCulprit();
+        }
+        else
+        {
             Accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
+            certainty -= 0.3f;
+        }
 
         if (Accused == this)
             Accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
@@ -105,16 +121,26 @@ public class NPC : MonoBehaviour {
 
         //first icon is accusee
         float rng_vagueness = Random.Range(0.0f, 1.0f);
-        if (rng_vagueness < 0.3f)
+        if (rng_vagueness < 0.5f)
             speechIcon1 = SpeechHelper.GetIcon_Person(Accused.ID);
         else
             speechIcon1 = SpeechHelper.GetIcon_Car(Accused.GetTraincar());
 
-        //second icon is direction
-        if (NPCTracker.FindCulprit() != null)
-            speech2IsDirection = true;
-        else
+        //second icon is certainty
+        float rng_certainty = Random.Range(0.0f, certainty);
+
+        if (rng_certainty < 0.2f)
+        {
             speechIcon2 = SpeechHelper.GetIcon_Certainty(false);
+        }
+        else if (rng_certainty < 0.7f)
+        {
+            speech2IsDirection = true;
+        }
+        else
+        {
+            speechIcon2 = SpeechHelper.GetIcon_Certainty(true);
+        }
     }
 
     private bool speech1IsDirection;
