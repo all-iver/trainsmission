@@ -6,34 +6,30 @@ using UnityEngine.UI;
 
 public class SpeechSpawner : MonoBehaviour {
 
-    public GameObject speechBubble;
+    public SpeechBubble speechBubble;
     public Sprite[] modifierIcons;
     public Sprite[] personIcons;
 
-    public GameObject SpawnBubble(Vector2 pos, Transform parent, int modifierIcon, int personIcon) {
-        GameObject bubble = Instantiate(speechBubble);
+    public SpeechBubble SpawnBubble(Vector2 pos, Transform parent, int modifierIcon = -1, int personIcon = -1) {
+        GameObject bubble = Instantiate(speechBubble).gameObject;
         bubble.transform.position = pos;
         bubble.transform.SetParent(parent);
         RectTransform rt = bubble.GetComponent<RectTransform>();
 
         Image image = rt.Find("Panel").Find("Left Slot").GetComponent<Image>();
+        modifierIcon = modifierIcon == -1 ? Random.Range(0, modifierIcons.Length) : modifierIcon;
         image.sprite = modifierIcons[modifierIcon];
         image.preserveAspect = true;
 
         image = rt.Find("Panel").Find("Right Slot").GetComponent<Image>();
+        personIcon = personIcon == -1 ? Random.Range(0, personIcons.Length) : personIcon;
         image.sprite = personIcons[personIcon];
         image.preserveAspect = true;
 
-        Vector3 scale = rt.lossyScale;
-        Sequence sequence = DOTween.Sequence();
-        rt.localScale = Vector3.zero;
-        sequence.Append(rt.DOScale(scale, 0.75f).SetEase(Ease.OutElastic, 0.1f));
-        sequence.AppendInterval(3);
-        sequence.Append(rt.DOScale(new Vector3(0, 0, 0), 0.25f));
-        sequence.OnComplete(() => {
-            Destroy(rt.gameObject);
-        });
-        return rt.gameObject;
+        return bubble.GetComponent<SpeechBubble>();
+    }
+
+    public void CloseBubble(GameObject bubble) {
     }
 
 }
