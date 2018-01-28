@@ -18,8 +18,8 @@ MonoBehaviour:
   Bumpkin: {fileID: 21300000, guid: 1abf1f550ee8a49e08a2bc6e5631be18, type: 3}
   Cowgirl: {fileID: 21300000, guid: d4700a3b6128641229bc02b276e4f60f, type: 3}
   Cat: {fileID: 21300000, guid: 3c3a1bf35cbe648e9bec4f55c1560869, type: 3}
-  Conductor: {fileID: 21300000, guid: cbfedbd1745ee47dc8b4baaecc414154, type: 3}
+  Conductor: {fileID: 21300000, guid: 1f764ea33f0194a60bbb652669290826, type: 3}
   Prospector: {fileID: 21300000, guid: e3487deed5ada4f6a96416f7165c37e9, type: 3}
   Apple: {fileID: 21300000, guid: 78e418dd0bd06474ebf82317a0d8230c, type: 3}
   Overalls: {fileID: 21300000, guid: cbfedbd1745ee47dc8b4baaecc414154, type: 3}
-  WhiteDress: {fileID: 21300000, guid: 63e6a415fdd80420ba422f0428cb490e, type: 3}
+  WhiteDress: {fileID: 21300000, guid: fc66d2609f9c640ca986cd0f40ea8d67, type: 3}

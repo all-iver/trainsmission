@@ -18,12 +18,14 @@ public class SpeechHelper : MonoBehaviour
     private static SpeechCatalog_People SpeechCatalog_People;
     private static SpeechCatalog_Directions SpeechCatalog_Directions;
     private static SpeechCatalog_Certainty SpeechCatalog_Certainty;
+    private static SpeechCatalog_Gender SpeechCatalog_Gender;
     public static Sprite UnknownSprite;
 
     [SerializeField] private SpeechCatalog_Traincars SpeechCatalog_Traincars_Cached;
     [SerializeField] private SpeechCatalog_People SpeechCatalog_People_Cached;
     [SerializeField] private SpeechCatalog_Directions SpeechCatalog_Directions_Cached;
     [SerializeField] private SpeechCatalog_Certainty SpeechCatalog_Certainty_Cached;
+    [SerializeField] private SpeechCatalog_Gender SpeechCatalog_Gender_Cached;
     [SerializeField] private Sprite UnknownSprite_Cached;
 
     private void Awake()
@@ -32,6 +34,7 @@ public class SpeechHelper : MonoBehaviour
         SpeechCatalog_People = SpeechCatalog_People_Cached;
         SpeechCatalog_Directions = SpeechCatalog_Directions_Cached;
         SpeechCatalog_Certainty = SpeechCatalog_Certainty_Cached;
+        SpeechCatalog_Gender = SpeechCatalog_Gender_Cached;
         UnknownSprite = UnknownSprite_Cached;
     }
 
@@ -64,6 +67,26 @@ public class SpeechHelper : MonoBehaviour
     public static Sprite GetIcon_Person_Random()
     {
         return GetIcon_Person(NPCTracker.GetRandomNPCID());
+    }
+
+    public static Sprite GetIcon_Gender(NPCTracker.ID id)
+    {
+        switch (id)
+        {
+            case NPCTracker.ID.Monocle: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Waiter: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.FanLady: return SpeechCatalog_Gender.Female;
+            case NPCTracker.ID.Hobo: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Bumpkin: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Cowgirl: return SpeechCatalog_Gender.Female;
+            case NPCTracker.ID.Cat: return GetIcon_Person(id);
+            case NPCTracker.ID.Conductor: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Prospector: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Apple: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Overalls: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.WhiteDress: return SpeechCatalog_Gender.Female;
+            default: return SpeechCatalog_Gender.Male;
+        }
     }
 
     public static Sprite GetIcon_Person(NPCTracker.ID id)
