@@ -70,7 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f38d3cb19b9407e8c59a1b5e4a08c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
+  birdBounds: {fileID: 1038982960996016, guid: d01bd3a8d39ca4252bfc1d3c6f4806ab, type: 2}
+  newPlayer: {fileID: 1887594438991428, guid: 480fe10694eb94b9b881b8caaeb3a03f, type: 2}
 --- !u!212 &212510976340999448
 SpriteRenderer:
   m_ObjectHideFlags: 1
