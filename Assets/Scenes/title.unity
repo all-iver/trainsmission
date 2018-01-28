@@ -1137,7 +1137,7 @@ MonoBehaviour:
     type: 2}
   SpeechCatalog_Certainty_Cached: {fileID: 11400000, guid: ec2a76dce90fe044b88c76b9e1a301de,
     type: 2}
-  UnknownSprite_Cached: {fileID: 21300000, guid: 4e64cd412e85a498bab2dc063d1cb38a,
+  UnknownSprite_Cached: {fileID: 21300000, guid: c6cf96fb87abd48b4ad8ce28d63048c8,
     type: 3}
 --- !u!4 &1297316983
 Transform:

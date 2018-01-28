@@ -14,6 +14,12 @@ public class NPCTracker : MonoBehaviour
         Cowgirl,
         Cat,
 
+        Conductor,
+        Prospector,
+        Apple,
+        Overalls,
+        WhiteDress,
+
         Count,
         None
     }
