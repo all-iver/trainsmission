@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1279731669231986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 1.4, z: 0}
+  m_LocalPosition: {x: -0.06, y: 2.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4979921353142436}
@@ -128,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1887594438991428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.93, y: -1.4, z: 0}
+  m_LocalPosition: {x: 1.93, y: -3.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4361625685780226}
@@ -205,10 +205,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.028262198, y: -1.5459371}
+  m_Offset: {x: 0.028262198, y: -0.025700808}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5045333, y: 0.09200321}
     oldSize: {x: 2.16, y: 3.6}
     newSize: {x: 2.16, y: 3.6}
     adaptiveTilingThreshold: 0.5
@@ -216,7 +216,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7728015, y: 0.19401646}
+  m_Size: {x: 0.7728015, y: 0.25248694}
   m_EdgeRadius: 0
 --- !u!81 &81524872035380978
 AudioListener:
@@ -282,6 +282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   hat: {fileID: 212682054513958228}
+  carJumpPower: 2
+  carJumpSpeed: 10
 --- !u!124 &124401887171337654
 Behaviour:
   m_ObjectHideFlags: 1

@@ -11,6 +11,8 @@ public class DoubleDragonPC : MonoBehaviour {
     SpriteRenderer spriteRenderer;
     public SpriteRenderer hat;
     bool jumpingBetweenCars;
+    public float carJumpPower = 3;
+    public float carJumpSpeed = 12;
 
 	// Use this for initialization
 	void Start () {
@@ -35,18 +37,21 @@ public class DoubleDragonPC : MonoBehaviour {
             spriteRenderer.flipX = direction.x < 0;
         } if (hat) {
             hat.flipX = spriteRenderer.flipX;
+            hat.sortingOrder = spriteRenderer.sortingOrder + 1;
         }
 	}
 
-    public void DoCarJump(int direction, float carJumpTime, Vector2 carJumpDistance) {
+    public void DoCarJump(Vector2 dest) {
         if (jumpingBetweenCars)
             return;
         jumpingBetweenCars = true;
         animator.SetBool("Grounded", false);
-        Debug.Log("Start car jump");
         Vector3 startPos = transform.position;
-        transform.DOMoveX(startPos.x + carJumpDistance.x * direction, carJumpTime).SetEase(Ease.Linear);
-        transform.DOMoveY(startPos.y + carJumpDistance.y, carJumpTime / 2).SetEase(Ease.OutCirc).SetLoops(2, LoopType.Yoyo)
+        float deltaX = Mathf.Abs(startPos.x - dest.x);
+        Vector3 dest3d = dest;
+        dest3d.z = transform.position.z;
+        transform.DOJump(dest3d, carJumpPower, 1, deltaX / carJumpSpeed).SetEase(Ease.Linear)
+        // transform.DOMoveY(startPos.y + carJumpDistance.y, carJumpTime / 2).SetEase(Ease.OutCirc).SetLoops(2, LoopType.Yoyo)
         .OnComplete(() => {
             jumpingBetweenCars = false;
             animator.SetBool("Grounded", true);
