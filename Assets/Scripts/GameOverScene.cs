@@ -15,6 +15,7 @@ public class GameOverScene : MonoBehaviour {
     public GameObject bubble, catBubble;
     public Tweener tweener;
     public GameObject winCard, loseCard, finCard;
+    public AudioSource winSound, loseSound;
 
 	// Use this for initialization
 	void Start () {
@@ -42,9 +43,13 @@ public class GameOverScene : MonoBehaviour {
         else
             cell = yourCell;
         cell.gameObject.SetActive(true);
-        tweener = cell.GetComponent<Image>().DOFade(0, 3).SetEase(Ease.InCirc).From();
+        tweener = cell.GetComponent<Image>().DOFade(0, 1).SetEase(Ease.InCirc).From();
         tweener.OnComplete(() => {
             tweener = null;
+            if (NPCTracker.AccusedCorrectly())
+                winSound.gameObject.SetActive(true);
+            else
+                loseSound.gameObject.SetActive(true);
         });
     }
     
