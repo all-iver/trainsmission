@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Audio;
 
 public class PigeonScript : MonoBehaviour {
 
@@ -16,6 +17,9 @@ public class PigeonScript : MonoBehaviour {
 
     Animator playerAnimator;
     Animator pigeonAnimator;
+
+    public AudioMixerSnapshot FlappyAudio;
+
 
     private void Awake()
     {
@@ -57,6 +61,9 @@ public class PigeonScript : MonoBehaviour {
 
         Debug.Log("pigeonANIM = " + pigeonAnimator);
         Debug.Log("playerANIM = " + playerAnimator);
+
+        Debug.Log("outside Music");
+        FlappyAudio.TransitionTo(6f);
         yield return new WaitForSeconds(8f);
 
         Vector3 currentPos = gameObject.transform.position;

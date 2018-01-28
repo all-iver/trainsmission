@@ -11,6 +11,7 @@ AudioMixerController:
   m_Snapshots:
   - {fileID: 24500006}
   - {fileID: 245778644622963854}
+  - {fileID: 245466293044173130}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -23,9 +24,10 @@ AudioMixerController:
     - 0776c298fdfff41e1832a79a2dc52fe7
     - 4ba4e2718afe04ce989b9dcc55ade584
     - ffcb350aa50a44013bb3219331c8b36f
+    - ed689eb53d6d2435b8f6b5148b99fda4
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: 245466293044173130}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -72,6 +74,23 @@ AudioMixerSnapshotController:
     9f18a6b565d094d71ac261d88d218b24: 0.025578512
     b3fc9f9dabf1c406a926559459d862a0: -25.086687
   m_TransitionOverrides: {}
+--- !u!243 &243158064238793134
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: WideOpen
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: ed689eb53d6d2435b8f6b5148b99fda4
+  m_Children: []
+  m_Volume: cd11d0abd032740aeb566b53ce428d00
+  m_Pitch: f8f03665668d64651be2f9952a7a5e6a
+  m_Effects:
+  - {fileID: 244687944351442168}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &243261209185635174
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -117,6 +136,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 243498009883608532}
   - {fileID: 243938141192186868}
+  - {fileID: 243158064238793134}
   m_Volume: 9f18a6b565d094d71ac261d88d218b24
   m_Pitch: 3e495a9e709d74f9089f6e6c039ce1e1
   m_Effects:
@@ -194,6 +214,33 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &244687944351442168
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: b44b151bd6c9a44bc89f1636b528faa1
+  m_EffectName: Attenuation
+  m_MixLevel: c6189ae1c4b124214accfeb680a430bb
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &245466293044173130
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FlappyAudio
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: e9d72a0f6225a4657b392a98f99aaea4
+  m_FloatValues:
+    d4fe2811c2975419e86fc823ac9354c5: -25.086687
+    53a2df517a9a8439d974bbd5f871df0e: -6.133707
+    9f18a6b565d094d71ac261d88d218b24: 0.025578512
+    b3fc9f9dabf1c406a926559459d862a0: -80
+  m_TransitionOverrides: {}
 --- !u!245 &245778644622963854
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
