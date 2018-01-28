@@ -12,22 +12,18 @@ public class PigeonScript : MonoBehaviour {
     //public GameObject birdBounds;
     public GameObject newPlayer;
 
-   // Sprite playerSprite;
-   // SpriteRenderer pigeonSpriteRend;
-
     Animator playerAnimator;
     Animator pigeonAnimator;
 
     public AudioMixerSnapshot FlappyAudio;
+    public AudioSource FlappySource;
+
 
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         pigeon = gameObject.transform;
-
-       // playerSprite = player.GetComponent<SpriteRenderer>().sprite;
-       //pigeonSpriteRend = gameObject.GetComponent<SpriteRenderer>();
 
         playerAnimator = player.GetComponent<Animator>();
         pigeonAnimator = gameObject.GetComponent<Animator>();
@@ -55,21 +51,17 @@ public class PigeonScript : MonoBehaviour {
     
     IEnumerator ChangePlayer (Transform target)
     {
-
-        Debug.Log("pigeon = "+ pigeon);
-        Debug.Log("player = " + player);
-
-        Debug.Log("pigeonANIM = " + pigeonAnimator);
-        Debug.Log("playerANIM = " + playerAnimator);
-
         Debug.Log("outside Music");
-        FlappyAudio.TransitionTo(6f);
+        FlappySource.Play();
+        FlappyAudio.TransitionTo(1f);
         yield return new WaitForSeconds(8f);
 
         Vector3 currentPos = gameObject.transform.position;
         Debug.Log("currentPos :" + currentPos);
 
         GameObject bodyDouble = Instantiate(newPlayer,player.transform.position,player.transform.rotation) as GameObject;
+
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         player.transform.position = currentPos;
 
         //playerSprite = pigeonSprite;

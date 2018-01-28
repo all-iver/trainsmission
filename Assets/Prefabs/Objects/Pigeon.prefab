@@ -73,6 +73,8 @@ MonoBehaviour:
   newPlayer: {fileID: 1887594438991428, guid: 480fe10694eb94b9b881b8caaeb3a03f, type: 2}
   FlappyAudio: {fileID: 245466293044173130, guid: beee55246b0ad4c57adba30ae4e6742a,
     type: 2}
+  FlappySource: {fileID: 82264500817045152, guid: 7a6374faa135649b585a06d473c6b7ac,
+    type: 2}
 --- !u!212 &212510976340999448
 SpriteRenderer:
   m_ObjectHideFlags: 1

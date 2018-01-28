@@ -25,14 +25,20 @@ public class PigeonCagedScript : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (triggered == false)
+        if (collision.CompareTag("Player"))
         {
-            if (Input.GetKeyDown("space"))
+            if (triggered == false)
             {
-                animator.SetBool("Empty", true);
-                print("space key was pressed");
-                GameObject FlappyBird = Instantiate(pigeon, transform.position, transform.rotation) as GameObject;
-                triggered = true;
+                
+                if (Input.GetKeyDown("space"))
+                {
+                    animator.SetBool("Empty", true);
+                    print("space key was pressed");
+                    GameObject FlappyBird = Instantiate(pigeon, transform.position, transform.rotation) as GameObject;
+                    collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                    triggered = true;
+
+                }
             }
         }
     }
