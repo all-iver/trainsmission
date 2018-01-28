@@ -202,11 +202,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114583936867866904, guid: 45787cd7a2f6a4c3b816bb645bc892b0,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2000490753}
+    - target: {fileID: 114400661347279004, guid: 45787cd7a2f6a4c3b816bb645bc892b0,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2000490753}
     - target: {fileID: 1433657835549446, guid: 45787cd7a2f6a4c3b816bb645bc892b0, type: 2}
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
-    - target: {fileID: 114583936867866904, guid: 45787cd7a2f6a4c3b816bb645bc892b0,
+    - target: {fileID: 114822621104669724, guid: 45787cd7a2f6a4c3b816bb645bc892b0,
         type: 2}
       propertyPath: cam
       value: 
@@ -236,10 +246,6 @@ Prefab:
       propertyPath: cam
       value: 
       objectReference: {fileID: 2000490753}
-    - target: {fileID: 4391079600997698, guid: 45787cd7a2f6a4c3b816bb645bc892b0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -8.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45787cd7a2f6a4c3b816bb645bc892b0, type: 2}
   m_IsPrefabParent: 0
@@ -302,6 +308,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114372961623940510, guid: 0e33614abacec44acad079d2c44c046b,
+        type: 2}
+      propertyPath: CameraTargets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4511160444213034, guid: 0e33614abacec44acad079d2c44c046b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -344,6 +355,16 @@ Prefab:
       propertyPath: CameraTargets.Array.data[1].TargetTransform
       value: 
       objectReference: {fileID: 898176509}
+    - target: {fileID: 114372961623940510, guid: 0e33614abacec44acad079d2c44c046b,
+        type: 2}
+      propertyPath: CameraTargets.Array.data[0].TargetInfluenceH
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114372961623940510, guid: 0e33614abacec44acad079d2c44c046b,
+        type: 2}
+      propertyPath: CameraTargets.Array.data[0].TargetInfluenceV
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e33614abacec44acad079d2c44c046b, type: 2}
   m_IsPrefabParent: 0
@@ -457,6 +478,16 @@ Prefab:
         type: 2}
       propertyPath: m_CullingMask.m_Bits
       value: 393216
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098258866828914, guid: 06d32ac116e714db3af2cd03646da5c4,
+        type: 2}
+      propertyPath: ObjectSize.x
+      value: 43.199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098258866828914, guid: 06d32ac116e714db3af2cd03646da5c4,
+        type: 2}
+      propertyPath: ObjectBottomLeft.x
+      value: -21.599998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06d32ac116e714db3af2cd03646da5c4, type: 2}

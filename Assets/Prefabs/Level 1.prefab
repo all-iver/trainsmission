@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1433657835549446}
   m_IsPrefabParent: 1
+--- !u!1 &1049703454977216
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4956667575000194}
+  - component: {fileID: 114400661347279004}
+  m_Layer: 0
+  m_Name: Post Scroller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1060574904819480
 GameObject:
   m_ObjectHideFlags: 1
@@ -176,7 +192,7 @@ GameObject:
   - component: {fileID: 4364712942459320}
   - component: {fileID: 114583936867866904}
   m_Layer: 0
-  m_Name: Fence Scroller
+  m_Name: Snake Scroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,6 +398,22 @@ GameObject:
   - component: {fileID: 4413443038455672}
   m_Layer: 12
   m_Name: Clouds_mid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1663929569026128
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4804345771961208}
+  - component: {fileID: 114822621104669724}
+  m_Layer: 0
+  m_Name: Fence Scroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -742,7 +774,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4391079600997698}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4373536142007726
 Transform:
@@ -780,7 +812,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523377472488894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -8.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4600192073788748}
@@ -788,6 +820,8 @@ Transform:
   - {fileID: 4668319664272556}
   - {fileID: 4650496067620906}
   - {fileID: 4903826653987894}
+  - {fileID: 4804345771961208}
+  - {fileID: 4956667575000194}
   - {fileID: 4364712942459320}
   m_Father: {fileID: 4790788893453492}
   m_RootOrder: 2
@@ -1071,6 +1105,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4804345771961208
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1663929569026128}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4391079600997698}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4828750791781808
 Transform:
   m_ObjectHideFlags: 1
@@ -1139,6 +1186,19 @@ Transform:
   m_Father: {fileID: 4522260342019432}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4956667575000194
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049703454977216}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4391079600997698}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114311739503704598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1151,8 +1211,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1660630333608402, guid: b0622fb7800dc408697925117bfeff88, type: 2}
-  scale: 3
-  threshold: 2.45
+  scale: 4
+  threshold: 3.5
+  width: 50
+  step: 0.5
+  cam: {fileID: 0}
+--- !u!114 &114400661347279004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049703454977216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e841c5a93ef54c8eb4ae8684d1b8b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1559570054466430, guid: 4701edb1658f74f079ca2ada8abf1543, type: 2}
+  scale: 4
+  threshold: 3.5
   width: 50
   step: 0.5
   cam: {fileID: 0}
@@ -1168,8 +1245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1044994087539716, guid: a654878ff7e2a462fa86d6ca383ff023, type: 2}
-  scale: 3
-  threshold: 2.45
+  scale: 4
+  threshold: 3.5
   width: 50
   step: 0.5
   cam: {fileID: 0}
@@ -1185,8 +1262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1660630333608402, guid: cf1373e9436b74a99a7f4bb24ba38c79, type: 2}
-  scale: 3
-  threshold: 2.45
+  scale: 4
+  threshold: 3.5
   width: 50
   step: 0.5
   cam: {fileID: 0}
@@ -1201,9 +1278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e841c5a93ef54c8eb4ae8684d1b8b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1660630333608402, guid: 3d6606a3873c9411089811c4151a1082, type: 2}
-  scale: 3
-  threshold: 2.45
+  prefab: {fileID: 1448254211130512, guid: 57cf15b7d5ce042dca69b1b252eef2b4, type: 2}
+  scale: 4
+  threshold: 3.5
   width: 50
   step: 0.5
   cam: {fileID: 0}
@@ -1219,8 +1296,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1249101482355464, guid: 14cc69bb744484657b79735e9cc02f05, type: 2}
-  scale: 3
-  threshold: 2.45
+  scale: 4
+  threshold: 3.5
+  width: 50
+  step: 0.5
+  cam: {fileID: 0}
+--- !u!114 &114822621104669724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1663929569026128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e841c5a93ef54c8eb4ae8684d1b8b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1660630333608402, guid: 3d6606a3873c9411089811c4151a1082, type: 2}
+  scale: 4
+  threshold: 3.5
   width: 50
   step: 0.5
   cam: {fileID: 0}
@@ -1236,8 +1330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1898406089644430, guid: 0a412546af7e1483a9b6f237cc474979, type: 2}
-  scale: 3
-  threshold: 2.45
+  scale: 4
+  threshold: 3.5
   width: 50
   step: 0.5
   cam: {fileID: 0}
