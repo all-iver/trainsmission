@@ -75,7 +75,15 @@ public class NPC : MonoBehaviour {
     #region speech AI
     private void InitSpeech()
     {
-        speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.Culprit);
+        speechIcon1 = SpeechHelper.UnknownSprite;
+        speechIcon2 = SpeechHelper.UnknownSprite;
+
+        float rng = Random.Range(0.0f, 1.0f);
+
+        if (rng < 0.8f)
+            speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.Culprit);
+        else
+            speechIcon1 = SpeechHelper.GetIcon_Person_Random();
 
         if (NPCTracker.FindCulprit() != null)
             speech2IsDirection = true;

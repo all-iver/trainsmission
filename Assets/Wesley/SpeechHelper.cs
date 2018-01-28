@@ -18,7 +18,7 @@ public class SpeechHelper : MonoBehaviour
     private static SpeechCatalog_People SpeechCatalog_People;
     private static SpeechCatalog_Directions SpeechCatalog_Directions;
     private static SpeechCatalog_Certainty SpeechCatalog_Certainty;
-    private static Sprite UnknownSprite;
+    public static Sprite UnknownSprite;
 
     [SerializeField] private SpeechCatalog_Traincars SpeechCatalog_Traincars_Cached;
     [SerializeField] private SpeechCatalog_People SpeechCatalog_People_Cached;
@@ -59,6 +59,11 @@ public class SpeechHelper : MonoBehaviour
     {
         if (delta < 0.0f) return SpeechCatalog_Directions.Left;
         else return SpeechCatalog_Directions.Right;
+    }
+
+    public static Sprite GetIcon_Person_Random()
+    {
+        return GetIcon_Person((NPCTracker.ID)Random.Range(0, (int)NPCTracker.ID.Count));
     }
 
     public static Sprite GetIcon_Person(NPCTracker.ID id)
