@@ -18,8 +18,10 @@ public class NPC : MonoBehaviour {
     public NPCTracker.ID ID;
     public Vector2 speechOffset = new Vector2(0.36f, 3.34f);
     public Vector2 catSpeechOffset = new Vector2(0.65f, 0.89f);
+
     Sprite speechIcon1;
     Sprite speechIcon2;
+
     SpeechBubble speechBubble;
     bool stopped = false;
     bool accused = false;
@@ -66,23 +68,40 @@ public class NPC : MonoBehaviour {
             return;
         }
         SpeechSpawner ss = FindObjectOfType<SpeechSpawner>();
-        
+        InitSpeech();
         MoveNext();
     }
 
-    private void UpdateSpeech()
+    #region speech AI
+    private void InitSpeech()
     {
         speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.Culprit);
-        var culprit = NPCTracker.FindCulprit();
-        if (culprit != null)
+
+        if (NPCTracker.FindCulprit() != null)
+            speech2IsDirection = true;
+        else
+            speechIcon2 = SpeechHelper.GetIcon_Certainty(false);
+    }
+
+    private bool speech1IsDirection;
+    private bool speech2IsDirection;
+    private void UpdateSpeech()
+    {
+
+        if (speech1IsDirection)
         {
+            var culprit = NPCTracker.FindCulprit();
+            speechIcon1 = SpeechHelper.GetIcon_Direction(culprit.transform.position.x - transform.position.x);
+        }
+
+        if (speech2IsDirection)
+        {
+            var culprit = NPCTracker.FindCulprit();
             speechIcon2 = SpeechHelper.GetIcon_Direction(culprit.transform.position.x - transform.position.x);
         }
-        else
-        {
-            speechIcon2 = SpeechHelper.GetIcon_Certainty(false);
-        }
     }
+    #endregion
+
 
     public void StopAndSpeak(Vector2 playerPos) {
         if (stopped)

@@ -16,4 +16,5 @@ MonoBehaviour:
   FanLady: {fileID: 21300000, guid: 111fc0a88f4e341e9add04634baf40dd, type: 3}
   Hobo: {fileID: 21300000, guid: 7a638e3a655b34239943e23ddf3e8996, type: 3}
   Bumpkin: {fileID: 21300000, guid: d68250aa8e3a54ad897b942490428cc0, type: 3}
+  Cowgirl: {fileID: 21300000, guid: 477bb88d1e1c945de8af67b3ca27c2d2, type: 3}
   Cat: {fileID: 21300000, guid: aede578f0f7764c62b96d6bca994cd93, type: 3}

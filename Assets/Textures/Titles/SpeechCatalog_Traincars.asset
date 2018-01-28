@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Caboose: {fileID: 21300000, guid: 7a1cf8a5e5efc4a52ac55994b617f8e5, type: 3}
   Storage: {fileID: 21300000, guid: 7a1cf8a5e5efc4a52ac55994b617f8e5, type: 3}
-  Passenger: {fileID: 21300000, guid: 4e64cd412e85a498bab2dc063d1cb38a, type: 3}
+  Passenger: {fileID: 21300000, guid: 13af0f07378d645848220d7c53937843, type: 3}
   Dining: {fileID: 21300000, guid: 100bff2a3094945d499da84e8322fd26, type: 3}
   Bar: {fileID: 21300000, guid: e9892af43e8d144ad9a4b53b7308d11f, type: 3}
   Engine: {fileID: 21300000, guid: 4e64cd412e85a498bab2dc063d1cb38a, type: 3}
