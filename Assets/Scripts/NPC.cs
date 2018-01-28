@@ -99,15 +99,15 @@ public class NPC : MonoBehaviour {
         //accuse somebody
         float rng_wrongAccusation =
             isCulprit ? 1.0f :
-            sameTraincar ? Random.Range(0.5f, 1.0f) :
+            sameTraincar ? 0.0f :
             Random.Range(0.0f, 1.0f)
         ;
 
-        if (rng_wrongAccusation < 0.75f)
+        if (rng_wrongAccusation < 0.5f)
         {
             Accused = NPCTracker.FindCulprit();
         }
-        else if (rng_wrongAccusation < 0.85)
+        else if (rng_wrongAccusation < 0.75f)
         {
             accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
             certainty -= 0.5f;
