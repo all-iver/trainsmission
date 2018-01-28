@@ -9,9 +9,20 @@ public class AudioTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Trigger Entered)");
         if (collision.CompareTag("Player"))
         {
             soundTrigger.Play();
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Trigger Exit)");
+        if (collision.CompareTag("Player"))
+        {
+            soundTrigger.Stop();
+        }
+                  
     }
 }
