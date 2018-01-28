@@ -7,6 +7,7 @@ public class Title : MonoBehaviour {
     public string nextScene;
     int count = -1;
     public GameObject[] cards;
+    public AudioSource startAudio;
 
     void Start() {
         foreach (GameObject go in cards)
@@ -15,6 +16,8 @@ public class Title : MonoBehaviour {
 
     void Update() {
         if (Input.GetButtonDown("Jump")) {
+            if (count == -1)
+                startAudio.gameObject.SetActive(true);
             count ++;
             if (count < cards.Length)
                 cards[count].SetActive(true);

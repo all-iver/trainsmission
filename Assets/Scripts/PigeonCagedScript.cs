@@ -35,7 +35,10 @@ public class PigeonCagedScript : MonoBehaviour {
                     animator.SetBool("Empty", true);
                     print("space key was pressed");
                     GameObject FlappyBird = Instantiate(pigeon, transform.position, transform.rotation) as GameObject;
+                    //lock player
                     collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                    collision.GetComponent<Animator>().enabled = false;
+
                     triggered = true;
 
                 }

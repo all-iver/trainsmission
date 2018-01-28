@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.Audio;
+
 
 public class PigeonScript : MonoBehaviour {
 
@@ -15,8 +15,7 @@ public class PigeonScript : MonoBehaviour {
     Animator playerAnimator;
     Animator pigeonAnimator;
 
-    public AudioMixerSnapshot FlappyAudio;
-    public AudioSource FlappySource;
+
 
 
 
@@ -52,8 +51,8 @@ public class PigeonScript : MonoBehaviour {
     IEnumerator ChangePlayer (Transform target)
     {
         Debug.Log("outside Music");
-        FlappySource.Play();
-        FlappyAudio.TransitionTo(1f);
+        player.GetComponent<FlappyAudioSwitch>().Flappy();
+
         yield return new WaitForSeconds(8f);
 
         Vector3 currentPos = gameObject.transform.position;
@@ -61,7 +60,11 @@ public class PigeonScript : MonoBehaviour {
 
         GameObject bodyDouble = Instantiate(newPlayer,player.transform.position,player.transform.rotation) as GameObject;
 
+        //unlock player
+        player.GetComponent<Animator>().enabled = true;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+
+
         player.transform.position = currentPos;
 
         //playerSprite = pigeonSprite;
