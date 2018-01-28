@@ -10,11 +10,11 @@ public class PacerController : MonoBehaviour {
 	
 	void Update () {
         float xMove = Time.deltaTime * scrollRate;
-        // transform.Translate(xMove, 0, 0);
+        transform.Translate(xMove, 0, 0);
         // transform.Translate(0, Time.deltaTime, 0, Space.World);
-        Vector3 p = transform.position;
-        p.x += xMove;
-        p.y = player.position.y + yOffset;
-        transform.position = p;
+        // Vector3 p = transform.position;
+        // p.x += xMove;
+        // p.y = player.position.y + yOffset;
+        // transform.position = p;
 	}
 }

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212972206917224116}
   - component: {fileID: 114279010863464486}
   - component: {fileID: 114530935011814772}
+  - component: {fileID: 61691490375580190}
   m_Layer: 15
   m_Name: NPC
   m_TagString: Untagged
@@ -36,12 +37,37 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1867506747678332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -3.42, z: 0.123846695}
+  m_LocalPosition: {x: 5.425676, y: -3.229202, z: 0.123846695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61691490375580190
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867506747678332}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.064109325, y: 0.44898438}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.52266645, y: 0.10152313}
+    oldSize: {x: 2.16, y: 3.6}
+    newSize: {x: 2.16, y: 3.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2207155, y: 1.2047429}
+  m_EdgeRadius: 0
 --- !u!114 &114279010863464486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,6 +94,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d68250aa8e3a54ad897b942490428cc0, type: 3}
   - {fileID: 21300000, guid: d6f5512afc2da4e13b6b605b6a273eef, type: 3}
   - {fileID: 21300000, guid: aede578f0f7764c62b96d6bca994cd93, type: 3}
+  speechOffset: {x: 0.36, y: 3.34}
 --- !u!114 &114530935011814772
 MonoBehaviour:
   m_ObjectHideFlags: 1
