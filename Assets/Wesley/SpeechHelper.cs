@@ -77,6 +77,11 @@ public class SpeechHelper : MonoBehaviour
             case NPCTracker.ID.Bumpkin: return SpeechCatalog_People.Bumpkin;
             case NPCTracker.ID.Cowgirl: return SpeechCatalog_People.Cowgirl;
             case NPCTracker.ID.Cat: return SpeechCatalog_People.Cat;
+            case NPCTracker.ID.Conductor: return SpeechCatalog_People.Conductor;
+            case NPCTracker.ID.Prospector: return SpeechCatalog_People.Prospector;
+            case NPCTracker.ID.Apple: return SpeechCatalog_People.Apple;
+            case NPCTracker.ID.Overalls: return SpeechCatalog_People.Overalls;
+            case NPCTracker.ID.WhiteDress: return SpeechCatalog_People.WhiteDress;
             default: return UnknownSprite;
         }
     }

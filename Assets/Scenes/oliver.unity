@@ -409,7 +409,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1001 &521318369
+--- !u!1001 &531623334
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -448,24 +448,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1632265049645280, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114297965372315536, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
+    - target: {fileID: 114140983537511824, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
         type: 2}
       propertyPath: ID
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114472510587132448, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: ID
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114374030893765386, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: ID
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
