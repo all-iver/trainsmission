@@ -14,7 +14,7 @@ public class GameOverScene : MonoBehaviour {
     public Sprite testSprite;
     public GameObject bubble, catBubble;
     public Tweener tweener;
-    public GameObject winCard, loseCard, finCard;
+    public GameObject winCard, loseCard, finCard, creditsCard;
     public AudioSource winSound, loseSound;
 
 	// Use this for initialization
@@ -24,6 +24,7 @@ public class GameOverScene : MonoBehaviour {
         yourCell.SetActive(false);
         theirCell.SetActive(false);
         finCard.SetActive(false);
+        creditsCard.SetActive(false);
         bubble.gameObject.SetActive(NPCTracker.Accused != NPCTracker.ID.Cat);
         catBubble.gameObject.SetActive(NPCTracker.Accused == NPCTracker.ID.Cat);
         // gos = FindObjectOfType<GameOverState>();
@@ -73,6 +74,9 @@ public class GameOverScene : MonoBehaviour {
                 finCard.SetActive(true);
             }
             if (state == 4) {
+                creditsCard.SetActive(true);
+            }
+            if (state == 5) {
                 UnityEngine.SceneManagement.SceneManager.LoadScene(titleScene);
             }
         }

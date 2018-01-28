@@ -71,6 +71,11 @@ public class Accuser : MonoBehaviour {
     void AccuseCurrent() {
         if (accusing || !current || current.ID == NPCTracker.ID.None)
             return;
+        
+        Animator animator = GetComponent<Animator>();
+        animator.SetBool("Grounded", true);
+        animator.SetBool("Moving", false);
+
         NPCTracker.Accused = current.ID;
         NPCTracker.AccusedCorrectly();
         current.BecomeAccused(transform.position);
