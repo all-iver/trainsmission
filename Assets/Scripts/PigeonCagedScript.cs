@@ -30,7 +30,7 @@ public class PigeonCagedScript : MonoBehaviour {
             if (triggered == false)
             {
                 
-                if (Input.GetKeyDown("space"))
+                if (Input.GetButtonDown("Jump"))
                 {
                     animator.SetBool("Empty", true);
                     print("space key was pressed");
