@@ -88,7 +88,7 @@ public class NPC : MonoBehaviour {
                 modifierIcon, personIcon);
     }
 
-    public void GetAccused(Vector2 playerPos) {
+    public void BecomeAccused(Vector2 playerPos) {
         accused = true;
         if (speechBubble) {
             speechBubble.Close();

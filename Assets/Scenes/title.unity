@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpriteCatalog: {fileID: 11400000, guid: 144f447ecfdbc0f4e89b2a16f2a336ce, type: 2}
   Nobodies: {fileID: 11400000, guid: 25d691665eb670748b686c2adc38ea0d, type: 2}
+  reroll: 1
 --- !u!4 &250095300
 Transform:
   m_ObjectHideFlags: 0
