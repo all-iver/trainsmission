@@ -127,7 +127,7 @@ MonoBehaviour:
   FollowVertical: 1
   VerticalFollowSmoothness: 0
   OffsetX: 0
-  OffsetY: 0.15
+  OffsetY: 0.37
   IsRelativeOffset: 1
   ZoomWithFOV: 0
   CurrentZoomTriggerID: 0
