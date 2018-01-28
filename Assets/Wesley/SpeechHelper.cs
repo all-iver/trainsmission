@@ -18,7 +18,7 @@ public class SpeechHelper : MonoBehaviour
     private static SpeechCatalog_People SpeechCatalog_People;
     private static SpeechCatalog_Directions SpeechCatalog_Directions;
     private static SpeechCatalog_Certainty SpeechCatalog_Certainty;
-    private static Sprite UnknownSprite;
+    public static Sprite UnknownSprite;
 
     [SerializeField] private SpeechCatalog_Traincars SpeechCatalog_Traincars_Cached;
     [SerializeField] private SpeechCatalog_People SpeechCatalog_People_Cached;
@@ -61,6 +61,11 @@ public class SpeechHelper : MonoBehaviour
         else return SpeechCatalog_Directions.Right;
     }
 
+    public static Sprite GetIcon_Person_Random()
+    {
+        return GetIcon_Person((NPCTracker.ID)Random.Range(0, (int)NPCTracker.ID.Count));
+    }
+
     public static Sprite GetIcon_Person(NPCTracker.ID id)
     {
         switch (id)
@@ -72,6 +77,11 @@ public class SpeechHelper : MonoBehaviour
             case NPCTracker.ID.Bumpkin: return SpeechCatalog_People.Bumpkin;
             case NPCTracker.ID.Cowgirl: return SpeechCatalog_People.Cowgirl;
             case NPCTracker.ID.Cat: return SpeechCatalog_People.Cat;
+            case NPCTracker.ID.Conductor: return SpeechCatalog_People.Conductor;
+            case NPCTracker.ID.Prospector: return SpeechCatalog_People.Prospector;
+            case NPCTracker.ID.Apple: return SpeechCatalog_People.Apple;
+            case NPCTracker.ID.Overalls: return SpeechCatalog_People.Overalls;
+            case NPCTracker.ID.WhiteDress: return SpeechCatalog_People.WhiteDress;
             default: return UnknownSprite;
         }
     }

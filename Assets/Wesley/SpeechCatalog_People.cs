@@ -12,4 +12,9 @@ public class SpeechCatalog_People : ScriptableObject
     public Sprite Bumpkin;
     public Sprite Cowgirl;
     public Sprite Cat;
+    public Sprite Conductor;
+    public Sprite Prospector;
+    public Sprite Apple;
+    public Sprite Overalls;
+    public Sprite WhiteDress;
 }

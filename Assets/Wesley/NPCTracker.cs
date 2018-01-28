@@ -14,6 +14,12 @@ public class NPCTracker : MonoBehaviour
         Cowgirl,
         Cat,
 
+        Conductor,
+        Prospector,
+        Apple,
+        Overalls,
+        WhiteDress,
+
         Count,
         None
     }
@@ -57,6 +63,11 @@ public class NPCTracker : MonoBehaviour
             case ID.Bumpkin: return NPCSpriteCatalog.Inst.Bumpkin;
             case ID.Cowgirl: return NPCSpriteCatalog.Inst.Cowgirl;
             case ID.Cat: return NPCSpriteCatalog.Inst.Cat;
+            case ID.Conductor: return NPCSpriteCatalog.Inst.Conductor;
+            case ID.Prospector: return NPCSpriteCatalog.Inst.Prospector;
+            case ID.Apple: return NPCSpriteCatalog.Inst.Apple;
+            case ID.Overalls: return NPCSpriteCatalog.Inst.Overalls;
+            case ID.WhiteDress: return NPCSpriteCatalog.Inst.WhiteDress;
             default: return NPCSpriteCatalog.Inst.Cat;
         }
     }
