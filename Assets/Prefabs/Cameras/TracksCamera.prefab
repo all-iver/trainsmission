@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 20656518821504320}
   - component: {fileID: 124582007149584798}
   - component: {fileID: 114824305156877480}
-  - component: {fileID: 114519615174422578}
+  - component: {fileID: 114098258866828914}
   m_Layer: 0
   m_Name: TracksCamera
   m_TagString: Untagged
@@ -79,7 +79,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &114519615174422578
+--- !u!114 &114098258866828914
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -93,8 +93,8 @@ MonoBehaviour:
   _pc2D: {fileID: 114824305156877480}
   ObjectToRepeat: {fileID: 4671732783933936, guid: 8257bf741bcbc495d8790b05b1f051a3,
     type: 2}
-  ObjectSize: {x: 43.199997, y: 17.279999}
-  ObjectBottomLeft: {x: -21.599998, y: -8.639999}
+  ObjectSize: {x: 43.200012, y: 17.279999}
+  ObjectBottomLeft: {x: -21.600006, y: -8.639999}
   ObjectOnStage: 0
   _repeatHorizontal: 1
   _repeatVertical: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
     TargetInfluenceV: 0
     TargetOffset: {x: 0, y: 0}
   - TargetTransform: {fileID: 0}
-    TargetInfluenceH: 1
+    TargetInfluenceH: 0
     TargetInfluenceV: 1
     TargetOffset: {x: 0, y: 0}
   CenterTargetOnStart: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   FollowVertical: 1
   VerticalFollowSmoothness: 0
   OffsetX: 0
-  OffsetY: 0.37
+  OffsetY: 0.38
   IsRelativeOffset: 1
   ZoomWithFOV: 0
   CurrentZoomTriggerID: 0
