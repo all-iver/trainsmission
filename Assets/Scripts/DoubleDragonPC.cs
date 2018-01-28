@@ -13,17 +13,19 @@ public class DoubleDragonPC : MonoBehaviour {
     bool jumpingBetweenCars;
     public float carJumpPower = 3;
     public float carJumpSpeed = 12;
+    Accuser accuser;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        accuser = GetComponent<Accuser>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (jumpingBetweenCars)
+        if (jumpingBetweenCars || accuser.IsAccusing())
             return;
         Vector2 direction;
         direction.x = Input.GetAxis("Horizontal");

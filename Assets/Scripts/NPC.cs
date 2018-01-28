@@ -22,6 +22,7 @@ public class NPC : MonoBehaviour {
     int personIcon;
     SpeechBubble speechBubble;
     bool stopped = false;
+    bool accused = false;
 
     bool CheckBounds(Vector2 dest) {
         return homeCollider.OverlapPoint(dest);
@@ -62,9 +63,11 @@ public class NPC : MonoBehaviour {
         MoveNext();
     }
 
-    public void StopAndSpeak() {
+    public void StopAndSpeak(Vector2 playerPos) {
         if (stopped)
             return;
+        float dir = transform.position.x - playerPos.x;
+        spriteRenderer.flipX = dir < 0 ? false : true;
         if (sequence != null) {
             sequence.Kill();
             sequence = null;
@@ -75,6 +78,22 @@ public class NPC : MonoBehaviour {
             off = catSpeechOffset;
         speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble((Vector2) transform.position + off, transform,
                 modifierIcon, personIcon);
+    }
+
+    public void GetAccused(Vector2 playerPos) {
+        accused = true;
+        if (speechBubble) {
+            speechBubble.Close();
+            speechBubble.gameObject.SetActive(false);
+            speechBubble = null;
+        }
+        float dir = transform.position.x - playerPos.x;
+        Vector2 off = new Vector2(dir < 0 ? -1 : 1, 0);
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(transform.DOJump(transform.position + (Vector3) off, 2f, 1, 0.2f));
+        sequence.Append(transform.DOJump(transform.position + (Vector3) off * 1.5f, 1f, 1, 0.2f));
+        float r = dir < 0 ? 20 : -20;
+        transform.DORotate(new Vector3(0, 0, r), 0.2f);
     }
 
     public void EndSpeaking() {

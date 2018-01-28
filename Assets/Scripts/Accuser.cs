@@ -5,6 +5,9 @@ using UnityEngine;
 public class Accuser : MonoBehaviour {
 
     NPC current;
+    bool accusing;
+    SpeechBubble speechBubble;
+    public Transform speechOffset;
 
     void OnTriggerEnter2D(Collider2D other) {
         if (current)
@@ -13,18 +16,36 @@ public class Accuser : MonoBehaviour {
         if (!npc)
             return;
         current = npc;
-        current.StopAndSpeak();
+        current.StopAndSpeak(transform.position);
+    }
+
+    public bool IsAccusing() {
+        return accusing;
     }
 
     void OnTriggerExit2D(Collider2D other) {
+        if (accusing)
+            return;
         NPC npc = other.gameObject.GetComponent<NPC>();
         if (!npc)
             return;
         if (npc == current) {
-            Debug.Log("Bye " + current.name);
             current.EndSpeaking();
             current = null;
         }
+    }
+
+    void AccuseCurrent() {
+        if (accusing || !current)
+            return;
+        current.GetAccused(transform.position);
+        speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble(speechOffset.position, transform, accuse: true);
+        accusing = true;
+    }
+
+    void Update() {
+        if (Input.GetButtonDown("Fire1"))
+            AccuseCurrent();
     }
 
 }
