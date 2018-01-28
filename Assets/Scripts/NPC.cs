@@ -89,7 +89,7 @@ public class NPC : MonoBehaviour {
         speechIcon1 = SpeechHelper.UnknownSprite;
         speechIcon2 = SpeechHelper.UnknownSprite;
 
-        float certainty = 0.9f;
+        float certainty = 1.0f;
 
         //accuse somebody
         float rng_wrongAccusation;
@@ -110,7 +110,7 @@ public class NPC : MonoBehaviour {
         else
         {
             Accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
-            certainty -= 0.3f;
+            certainty -= 0.4f;
         }
 
         if (Accused == this)
@@ -121,8 +121,10 @@ public class NPC : MonoBehaviour {
 
         //first icon is accusee
         float rng_vagueness = Random.Range(0.0f, 1.0f);
-        if (rng_vagueness < 0.5f)
+        if (rng_vagueness < 0.3f)
             speechIcon1 = SpeechHelper.GetIcon_Person(Accused.ID);
+        else if (rng_vagueness < 0.7f)
+            speechIcon1 = SpeechHelper.GetIcon_Gender(Accused.ID);
         else
             speechIcon1 = SpeechHelper.GetIcon_Car(Accused.GetTraincar());
 

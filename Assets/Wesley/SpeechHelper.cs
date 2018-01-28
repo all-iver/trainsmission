@@ -69,9 +69,24 @@ public class SpeechHelper : MonoBehaviour
         return GetIcon_Person(NPCTracker.GetRandomNPCID());
     }
 
-    public static Sprite GetIcon_Gender(bool male)
+    public static Sprite GetIcon_Gender(NPCTracker.ID id)
     {
-        return male ? SpeechCatalog_Gender.Male : SpeechCatalog_Gender.Female;
+        switch (id)
+        {
+            case NPCTracker.ID.Monocle: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Waiter: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.FanLady: return SpeechCatalog_Gender.Female;
+            case NPCTracker.ID.Hobo: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Bumpkin: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Cowgirl: return SpeechCatalog_Gender.Female;
+            case NPCTracker.ID.Cat: return GetIcon_Person(id);
+            case NPCTracker.ID.Conductor: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Prospector: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Apple: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.Overalls: return SpeechCatalog_Gender.Male;
+            case NPCTracker.ID.WhiteDress: return SpeechCatalog_Gender.Female;
+            default: return SpeechCatalog_Gender.Male;
+        }
     }
 
     public static Sprite GetIcon_Person(NPCTracker.ID id)

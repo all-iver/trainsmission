@@ -13,7 +13,6 @@ public class NPCTracker : MonoBehaviour
         Bumpkin,
         Cowgirl,
         Cat,
-
         Conductor,
         Prospector,
         Apple,
