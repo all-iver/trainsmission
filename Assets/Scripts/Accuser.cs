@@ -35,12 +35,18 @@ public class Accuser : MonoBehaviour {
         }
     }
 
+    IEnumerator EndGame() {
+        yield return new WaitForSeconds(4);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndGame");
+    }
+
     void AccuseCurrent() {
         if (accusing || !current)
             return;
         current.GetAccused(transform.position);
         speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble(speechOffset.position, transform, accuse: true);
         accusing = true;
+        StartCoroutine(EndGame());
     }
 
     void Update() {
