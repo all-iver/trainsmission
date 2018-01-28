@@ -15,7 +15,7 @@ public class Scrollyman : MonoBehaviour {
     float almostEquals = 0.05f;
     Grid grid;
     Transform children;
-    Camera cam;
+    public Camera cam;
     float seed;
 
 	// Use this for initialization
@@ -24,7 +24,8 @@ public class Scrollyman : MonoBehaviour {
         children.SetParent(transform);
         grid = children.gameObject.AddComponent<Grid>();
         grid.cellSize = new Vector2(step, step);
-        cam = Camera.main;
+        if (!cam)
+            cam = Camera.main;
         seed = Random.Range(10f, 999f);
 	}
 
