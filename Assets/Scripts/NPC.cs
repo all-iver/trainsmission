@@ -130,6 +130,7 @@ public class NPC : MonoBehaviour {
         if (rng_vagueness < 0.4f)
         {
             speechIcon1 = SpeechHelper.GetIcon_Person(Accused.ID);
+            certainty -= 0.2f;
         }
         else if (rng_vagueness < 0.6f)
         {
