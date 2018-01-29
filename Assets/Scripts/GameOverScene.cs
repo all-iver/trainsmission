@@ -70,7 +70,7 @@ public class GameOverScene : MonoBehaviour {
         if (tweener != null)
             return;
         timer += Time.deltaTime;
-        if ((timer >= 3 && state == 0) || Input.GetButtonDown("Jump")) {
+        if ((timer >= 2 && state == 0) || Input.GetButtonDown("Jump")) {
             state ++;
             if (state == 1) {
                 bubble.gameObject.SetActive(false);
