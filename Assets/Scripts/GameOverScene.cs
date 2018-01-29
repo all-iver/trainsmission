@@ -16,6 +16,7 @@ public class GameOverScene : MonoBehaviour {
     public Tweener tweener;
     public GameObject winCard, loseCard, finCard, creditsCard;
     public AudioSource winSound, loseSound;
+    float timer;
 
 	// Use this for initialization
 	void Start () {
@@ -68,7 +69,8 @@ public class GameOverScene : MonoBehaviour {
     void Update() {
         if (tweener != null)
             return;
-        if (Input.GetButtonDown("Jump")) {
+        timer += Time.deltaTime;
+        if ((timer >= 3 && state == 0) || Input.GetButtonDown("Jump")) {
             state ++;
             if (state == 1) {
                 bubble.gameObject.SetActive(false);
