@@ -8,7 +8,7 @@ public class GameOverScene : MonoBehaviour {
 
     public string titleScene = "title";
     // GameOverState gos;
-    public Image npc;
+    public Image npc, culprit;
     public GameObject yourCell, theirCell;
     int state;
     public Sprite testSprite;
@@ -25,6 +25,7 @@ public class GameOverScene : MonoBehaviour {
         theirCell.SetActive(false);
         finCard.SetActive(false);
         creditsCard.SetActive(false);
+        culprit.gameObject.SetActive(false);
         bubble.gameObject.SetActive(NPCTracker.Accused != NPCTracker.ID.Cat);
         catBubble.gameObject.SetActive(NPCTracker.Accused == NPCTracker.ID.Cat);
         // gos = FindObjectOfType<GameOverState>();
@@ -52,6 +53,11 @@ public class GameOverScene : MonoBehaviour {
             else
                 loseSound.gameObject.SetActive(true);
         });
+        if (!NPCTracker.AccusedCorrectly()) {
+            culprit.gameObject.SetActive(true);
+            culprit.DOFade(0, 1).From().SetEase(Ease.InCirc);
+            npc.DOFade(0, 1).SetEase(Ease.InCirc);
+        }
     }
     
     void Update() {

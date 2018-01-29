@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class AccusedSpriteAssigner : MonoBehaviour {
 
-    public Image Image;
+    public Image Accused, Culprit;
 
 	void Start ()
     {
-        Image.sprite = NPCTracker.GetSprite(NPCTracker.Accused);
+        Accused.sprite = NPCTracker.GetSprite(NPCTracker.Accused);
+        Culprit.sprite = NPCTracker.GetSprite(NPCTracker.Culprit);
 	}
 }
