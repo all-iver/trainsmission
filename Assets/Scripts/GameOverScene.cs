@@ -12,7 +12,7 @@ public class GameOverScene : MonoBehaviour {
     public GameObject yourCell, theirCell;
     int state;
     public Sprite testSprite;
-    public GameObject bubble, catBubble;
+    public GameObject bubble, catBubble, hahaBubble, catHahaBubble;
     public Tweener tweener;
     public GameObject winCard, loseCard, finCard, creditsCard;
     public AudioSource winSound, loseSound;
@@ -28,6 +28,8 @@ public class GameOverScene : MonoBehaviour {
         culprit.gameObject.SetActive(false);
         bubble.gameObject.SetActive(NPCTracker.Accused != NPCTracker.ID.Cat);
         catBubble.gameObject.SetActive(NPCTracker.Accused == NPCTracker.ID.Cat);
+        hahaBubble.gameObject.SetActive(false);
+        catHahaBubble.gameObject.SetActive(false);
         // gos = FindObjectOfType<GameOverState>();
         // if (!gos) {
         //     gos = new GameObject("Game Over State").AddComponent<GameOverState>();
@@ -48,10 +50,13 @@ public class GameOverScene : MonoBehaviour {
         tweener = cell.GetComponent<Image>().DOFade(0, 1).SetEase(Ease.InCirc).From();
         tweener.OnComplete(() => {
             tweener = null;
-            if (NPCTracker.AccusedCorrectly())
+            if (NPCTracker.AccusedCorrectly()) {
                 winSound.gameObject.SetActive(true);
-            else
+            } else {
                 loseSound.gameObject.SetActive(true);
+                hahaBubble.gameObject.SetActive(NPCTracker.Culprit != NPCTracker.ID.Cat);
+                catHahaBubble.gameObject.SetActive(NPCTracker.Culprit == NPCTracker.ID.Cat);
+            }
         });
         if (!NPCTracker.AccusedCorrectly()) {
             culprit.gameObject.SetActive(true);
