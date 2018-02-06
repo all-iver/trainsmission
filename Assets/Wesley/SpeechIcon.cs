@@ -7,8 +7,9 @@ public class SpeechIcon : MonoBehaviour
 {
 #pragma warning disable 649
 	[SerializeField] private Animator Animator;
-	[SerializeField] private Image Image;
 #pragma warning restore 649
+
+	public Image Image;
 
 	public void SetIcon(Sprite icon)
 	{
