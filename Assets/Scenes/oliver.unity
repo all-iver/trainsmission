@@ -974,8 +974,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 1711485458}
   ID: 11
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &97046005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2471,8 +2469,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 1733693341}
   ID: 4
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &336284487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2612,8 +2608,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 1733693341}
   ID: 3
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &338172608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2829,8 +2823,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 1733693341}
   ID: 8
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &367012027
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5168,8 +5160,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 1813555424}
   ID: 2
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &798713179
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5535,8 +5525,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 1813555424}
   ID: 6
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &902230791
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6642,7 +6630,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -913199665
+  randomSeed: 1276332872
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7536,7 +7524,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -10734,8 +10722,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 912944789}
   ID: 0
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1136212643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11096,8 +11082,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 912944789}
   ID: 10
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1203608029
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11328,8 +11312,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 1711485458}
   ID: 5
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1277468673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12874,8 +12856,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 1711485458}
   ID: 1
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1680669600
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13573,8 +13553,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 481267094}
   ID: 7
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1815499158
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13661,7 +13639,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteCatalog: {fileID: 11400000, guid: 144f447ecfdbc0f4e89b2a16f2a336ce, type: 2}
-  Nobodies: {fileID: 0}
   reroll: 0
 --- !u!1 &1851357113
 GameObject:
@@ -13859,8 +13836,6 @@ MonoBehaviour:
   maxDistance: 10
   homeCollider: {fileID: 1813555424}
   ID: 9
-  speechOffset: {x: 0.36, y: 3.34}
-  catSpeechOffset: {x: 0.65, y: 0.89}
 --- !u!212 &1857216270
 SpriteRenderer:
   m_ObjectHideFlags: 0
