@@ -76,11 +76,14 @@ public class Accuser : MonoBehaviour {
         animator.SetBool("Grounded", true);
         animator.SetBool("Moving", false);
 
+        speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble(speechOffset.position, transform);
+		speechBubble.Accuse();
+
         NPCTracker.Accused = current.ID;
         NPCTracker.AccusedCorrectly();
         current.BecomeAccused(transform.position);
-        speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble(speechOffset.position, transform, accuse: true);
         accusing = true;
+		
         StartCoroutine(EndGame());
     }
 

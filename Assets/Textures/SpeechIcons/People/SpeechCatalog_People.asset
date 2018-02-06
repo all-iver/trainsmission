@@ -14,7 +14,7 @@ MonoBehaviour:
   Monocle: {fileID: 21300000, guid: 2b9a6d40d15794078b8e77c13adeaf22, type: 3}
   Waiter: {fileID: 21300000, guid: e9892af43e8d144ad9a4b53b7308d11f, type: 3}
   FanLady: {fileID: 21300000, guid: fe86006a8a23b43c49ea98c2cb600f06, type: 3}
-  Hobo: {fileID: 21300000, guid: a3994ea5f63ad4f3ba0e651ec5e49494, type: 3}
+  Hobo: {fileID: 21300000, guid: b93023710d52e4b46bb5670512e06dd1, type: 3}
   Bumpkin: {fileID: 21300000, guid: 1abf1f550ee8a49e08a2bc6e5631be18, type: 3}
   Cowgirl: {fileID: 21300000, guid: d4700a3b6128641229bc02b276e4f60f, type: 3}
   Cat: {fileID: 21300000, guid: 3c3a1bf35cbe648e9bec4f55c1560869, type: 3}

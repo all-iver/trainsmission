@@ -20,13 +20,15 @@ public class SpeechHelper : MonoBehaviour
     private static SpeechCatalog_Certainty SpeechCatalog_Certainty;
     private static SpeechCatalog_Gender SpeechCatalog_Gender;
     public static Sprite UnknownSprite;
+	public static Sprite DrunkSprite;
 
-    [SerializeField] private SpeechCatalog_Traincars SpeechCatalog_Traincars_Cached;
+	[SerializeField] private SpeechCatalog_Traincars SpeechCatalog_Traincars_Cached;
     [SerializeField] private SpeechCatalog_People SpeechCatalog_People_Cached;
     [SerializeField] private SpeechCatalog_Directions SpeechCatalog_Directions_Cached;
     [SerializeField] private SpeechCatalog_Certainty SpeechCatalog_Certainty_Cached;
     [SerializeField] private SpeechCatalog_Gender SpeechCatalog_Gender_Cached;
-    [SerializeField] private Sprite UnknownSprite_Cached;
+	[SerializeField] private Sprite DrunkSprite_Cached;
+	[SerializeField] private Sprite UnknownSprite_Cached;
 
     private void Awake()
     {
@@ -36,7 +38,8 @@ public class SpeechHelper : MonoBehaviour
         SpeechCatalog_Certainty = SpeechCatalog_Certainty_Cached;
         SpeechCatalog_Gender = SpeechCatalog_Gender_Cached;
         UnknownSprite = UnknownSprite_Cached;
-    }
+		DrunkSprite = DrunkSprite_Cached;
+	}
 
     public static Sprite GetIcon_Certainty(bool certain)
     {

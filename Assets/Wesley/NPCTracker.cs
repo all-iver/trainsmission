@@ -24,14 +24,12 @@ public class NPCTracker : MonoBehaviour
     }
 
     [SerializeField] private NPCSpriteCatalog SpriteCatalog;
-    [SerializeField] private NPCSpriteCatalog_Nobodies Nobodies;
 
     public bool reroll = false;
 
     private void Awake()
     {
         NPCSpriteCatalog.Inst = SpriteCatalog;
-        NPCSpriteCatalog_Nobodies.Inst = Nobodies;
         if (reroll)
             RollCulprit();
     }
@@ -73,13 +71,6 @@ public class NPCTracker : MonoBehaviour
             case ID.WhiteDress: return NPCSpriteCatalog.Inst.WhiteDress;
             default: return NPCSpriteCatalog.Inst.Cat;
         }
-    }
-
-    public static Sprite GetSprite_Nobody()
-    {
-        return NPCSpriteCatalog_Nobodies.Inst.Sprites[
-            Random.Range(0, NPCSpriteCatalog_Nobodies.Inst.Sprites.Length)
-        ];
     }
 
     public static ID GetRandomNPCID()

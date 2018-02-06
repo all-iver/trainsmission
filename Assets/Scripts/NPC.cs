@@ -16,8 +16,8 @@ public class NPC : MonoBehaviour {
     public Collider2D homeCollider;
     SpriteRenderer spriteRenderer;
     public NPCTracker.ID ID;
-    public Vector2 speechOffset = new Vector2(0.36f, 3.34f);
-    public Vector2 catSpeechOffset = new Vector2(0.65f, 0.89f);
+    private Vector2 speechOffset = new Vector2(0.36f, 3.34f);
+    private Vector2 catSpeechOffset = new Vector2(0.65f, 0.89f);
 
     SpeechBubble speechBubble;
     bool stopped = false;
@@ -53,7 +53,9 @@ public class NPC : MonoBehaviour {
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (ID == NPCTracker.ID.None)
         {
-            spriteRenderer.sprite = NPCTracker.GetSprite_Nobody();
+			//ghost cat for unknown NPCs
+			spriteRenderer.sprite = NPCTracker.GetSprite(NPCTracker.ID.Cat);
+			spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         }
         else
         {
@@ -64,7 +66,6 @@ public class NPC : MonoBehaviour {
             Debug.Log("NPC can't move without a home collider");
             return;
         }
-        SpeechSpawner ss = FindObjectOfType<SpeechSpawner>();
         InitSpeech();
         MoveNext();
     }
@@ -82,19 +83,33 @@ public class NPC : MonoBehaviour {
     #region speech AI
     Sprite speechIcon1;
     Sprite speechIcon2;
+	SpeechEmotion speechEmotion;
     NPC Accused;
 
     private void InitSpeech()
     {
         speechIcon1 = SpeechHelper.UnknownSprite;
         speechIcon2 = SpeechHelper.UnknownSprite;
-
-
+		
         bool isCulprit = ID == NPCTracker.Culprit;
         bool sameTraincar = NPCTracker.FindCulprit().GetTraincar() == GetTraincar();
 
-        //base certainty
-        float certainty = sameTraincar ? 1.0f : 0.9f;
+		#region Special Case: Cat
+		if (ID == NPCTracker.ID.Cat)
+		{
+			if (isCulprit) speechEmotion = SpeechEmotion.Loopy;
+			else if (sameTraincar) speechEmotion = SpeechEmotion.Scared;
+			else speechEmotion = SpeechEmotion.Loopy;
+
+			Accused = NPCTracker.FindCulprit();
+			speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.ID.Cat);
+			speechIcon2 = SpeechHelper.GetIcon_Certainty(false);
+			return;
+		}
+		#endregion
+
+		//base certainty
+		float certainty = sameTraincar ? 1.0f : 0.9f;
 
         //accuse somebody
         float rng_wrongAccusation =
@@ -122,7 +137,7 @@ public class NPC : MonoBehaviour {
         if (Accused == this || Accused == null)
             Accused = NPCTracker.FindNPC(NPCTracker.RedHerring);
 
-        //first icon is accusee
+        //first icon represents accusation
         float rng_vagueness =
             sameTraincar ? Random.Range(0.0f, 0.6f) :
             Random.Range(0.0f, 1.0f)
@@ -141,21 +156,29 @@ public class NPC : MonoBehaviour {
             speechIcon1 = SpeechHelper.GetIcon_Car(Accused.GetTraincar());
         }
 
-        //second icon is certainty
+        //second icon and animation represent certainty
         float rng_certainty = Random.Range(0.0f, certainty);
 
         if (rng_certainty < 0.2f)
         {
             speechIcon2 = SpeechHelper.GetIcon_Certainty(false);
-        }
-        else if (rng_certainty < 0.7f)
+			speechEmotion = SpeechEmotion.Loopy;
+		}
+        else if (rng_certainty < 0.5f)
         {
             speech2IsDirection = true;
-        }
-        else
+			speechEmotion = SpeechEmotion.Loopy;
+		}
+		else if (rng_certainty < 0.7f)
+		{
+			speech2IsDirection = true;
+			speechEmotion = SpeechEmotion.Scared;
+		}
+		else
         {
             speechIcon2 = SpeechHelper.GetIcon_Certainty(true);
-        }
+			speechEmotion = SpeechEmotion.Emphatic;
+		}
     }
 
     private bool speech1IsDirection;
@@ -190,10 +213,17 @@ public class NPC : MonoBehaviour {
         Vector2 off = speechOffset;
         if (spriteRenderer.sprite.name == "cat")
             off = catSpeechOffset;
-
-        UpdateSpeech();
-        speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble((Vector2) transform.position + off, transform,
-                speechIcon1, speechIcon2);
+		
+        speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble((Vector2)transform.position + off, transform);
+		if (ID == NPCTracker.ID.Hobo)
+		{
+			speechBubble.DrunkenAccuse();
+		}
+		else
+		{
+			UpdateSpeech();
+			speechBubble.Say(speechIcon1, speechIcon2, speechEmotion);
+		}
     }
 
     public void BecomeAccused(Vector2 playerPos) {
