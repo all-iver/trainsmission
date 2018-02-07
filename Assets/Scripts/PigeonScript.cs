@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -63,9 +63,9 @@ public class PigeonScript : MonoBehaviour {
         //unlock player
         player.GetComponent<Animator>().enabled = true;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+		player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-
-        player.transform.position = currentPos;
+		player.transform.position = currentPos;
 
         //playerSprite = pigeonSprite;
         playerAnimator.runtimeAnimatorController = pigeonAnimator.runtimeAnimatorController;

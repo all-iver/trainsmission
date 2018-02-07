@@ -29,9 +29,9 @@ TagManager:
   - foreground_objects
   - gc_train
   - BirdBounds
-  - 
-  - 
-  - 
+  - FC_1
+  - FC_2
+  - FC_3
   - 
   - 
   - 
@@ -67,4 +67,7 @@ TagManager:
     locked: 0
   - name: Scrolling Foreground Objects
     uniqueID: 2597688463
+    locked: 0
+  - name: FlappyClouds
+    uniqueID: 916749985
     locked: 0
