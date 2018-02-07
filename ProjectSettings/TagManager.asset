@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BirdBounds
   - FlappyAudio
+  - CloudCover
   layers:
   - Default
   - TransparentFX
