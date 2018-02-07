@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 61368948849109752}
   - component: {fileID: 61084640199016124}
   - component: {fileID: 61658758961664364}
+  - component: {fileID: 114336165885762330}
   m_Layer: 0
   m_Name: Cloud Triggers
   m_TagString: Untagged
@@ -6665,6 +6666,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 4
+--- !u!114 &114336165885762330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1086812982470818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12af74e0b763ea14a9c256e12ca37c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coverCloud: {fileID: 0}
 --- !u!114 &114354465051117232
 MonoBehaviour:
   m_ObjectHideFlags: 1

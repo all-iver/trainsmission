@@ -32,7 +32,7 @@ TagManager:
   - FC_1
   - FC_2
   - FC_3
-  - 
+  - TreeScene
   - 
   - 
   - 
@@ -70,4 +70,13 @@ TagManager:
     locked: 0
   - name: FlappyClouds
     uniqueID: 916749985
+    locked: 0
+  - name: TreeofLife
+    uniqueID: 305432955
+    locked: 0
+  - name: Pigeons
+    uniqueID: 4129698587
+    locked: 0
+  - name: CloudCover
+    uniqueID: 3273228045
     locked: 0
