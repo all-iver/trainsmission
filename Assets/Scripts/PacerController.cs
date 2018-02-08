@@ -1,12 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PacerController : MonoBehaviour {
     
     public float scrollRate;
-    public Transform player;
-    public float yOffset = 0.15f;
+   // public Transform player;
+  //  public float yOffset = 0.15f;
 	
 	void Update () {
         float xMove = Time.deltaTime * scrollRate;

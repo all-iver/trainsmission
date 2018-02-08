@@ -2,12 +2,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class FlappyEnding : MonoBehaviour {
 
-	public GameObject coverCloud;
+	public GameObject treeClouds;
+	public GameObject treeCloudsCamera;
+	public GameObject whitePanel;
+	public GameObject cloudRight;
+	public GameObject cloudLeft;
+
+	public PigeonGrey pigeonGrey;
 
 	private GameObject player;
+
+
+	private void Awake()
+	{
+		treeClouds.SetActive(false);
+		treeCloudsCamera.SetActive(false);
+	}
+
 
 	private void OnTriggerStay2D(Collider2D collision)
 	{
@@ -15,41 +31,78 @@ public class FlappyEnding : MonoBehaviour {
 		{
 			player = collision.gameObject;
 			Debug.Log("TriggerFlappyEnding");
-			StartCoroutine(FadeTo(1.0f, 2f));
-			
+			StartCoroutine(Ending());
 		}
 	}
 
-	IEnumerator FadeTo(float aValue, float aTime)
+	IEnumerator Ending()
 	{
+		StartCoroutine(FadeSR(1.0f, 2f, cloudLeft));
+		StartCoroutine(FadeSR(1.0f, 2f, cloudRight));
+		StartCoroutine(FadeImg(1.0f, 3f, whitePanel));
+		yield return new WaitForSeconds(3f);
+		StartCoroutine(Ending2());
+	}
 
-		float alpha = coverCloud.GetComponent<SpriteRenderer>().color.a;
+	IEnumerator FadeSR(float aValue, float aTime, GameObject gameObject)
+	{
+		float alpha = gameObject.GetComponent<SpriteRenderer>().color.a;
+
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
 		{
 			Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, aValue, t));
-			coverCloud.GetComponent<SpriteRenderer>().color = newColor;
+			gameObject.GetComponent<SpriteRenderer>().color = newColor;
 			yield return null;
 		}
-		//StartCoroutine(Ending());
 	}
 
 
-	IEnumerator Ending()
+	IEnumerator FadeImg(float aValue, float aTime, GameObject gameObject)
+	{
+		float alpha = gameObject.GetComponent<Image>().color.a;
+
+		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+		{
+			Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, aValue, t));
+			gameObject.GetComponent<Image>().color = newColor;
+			yield return null;
+		}
+	}
+
+
+	IEnumerator Ending2()
 	{
 		//lock player
 		player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 		//collision.GetComponent<Animator>().enabled = false;
 
-		//CloudCover();
-		yield return new WaitForSeconds(2f);
+		//turn on TreeClouds + Camera
+		treeClouds.SetActive(true);
+		treeCloudsCamera.SetActive(true);
 
-		Vector3 currentPos = player.transform.position;
-		Debug.Log("currentPos :" + currentPos);
-
+		//move player
+		//Vector3 currentPos = player.transform.position;
+		//Debug.Log("currentPos :" + currentPos);
 		player.transform.position = new Vector3(-200, 100, 0);
+		//Vector3 newPos = player.transform.position;
+		//Debug.Log("newPos :" + newPos);
 
-		Vector3 newPos = player.transform.position;
-		Debug.Log("newPos :" + newPos);
+		yield return new WaitForSeconds(1f);
+		Debug.Log("moving clouds");
+
+		StartCoroutine(FadeSR(0.0f, 5f, cloudLeft));
+		StartCoroutine(FadeSR(0.0f, 5f, cloudRight));
+		StartCoroutine(FadeImg(0.0f, 3f, whitePanel));
+
+		//move Cloud Cover
+		cloudRight.transform.DOMoveX(-60, 6);
+		cloudLeft.transform.DOMoveX(-240, 6);
+
+		yield return new WaitForSeconds(3f);
+
+		pigeonGrey.FlyHome();
+	}
+
 		//GameObject bodyDouble = Instantiate(newPlayer, player.transform.position, player.transform.rotation) as GameObject;
 		//unlock player
 		//player.GetComponent<Animator>().enabled = true;
@@ -64,7 +117,6 @@ public class FlappyEnding : MonoBehaviour {
 
 		//birdBounds.SetActive(true);
 		//pigeon.gameObject.SetActive(false);
-	}
 
 	private void CloudCover()
 	{
