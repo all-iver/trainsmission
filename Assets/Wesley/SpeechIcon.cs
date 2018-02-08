@@ -18,7 +18,9 @@ public class SpeechIcon : MonoBehaviour
 
 	public void SetEmotion(SpeechEmotion emotion)
 	{
+		/*
 		Animator.SetInteger("Emotion", (int)emotion);
 		Animator.SetTrigger("EmotionChanged");
+		*/
 	}
 }
