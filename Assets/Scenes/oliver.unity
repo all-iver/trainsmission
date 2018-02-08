@@ -391,6 +391,78 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &269448235
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
+        type: 2}
+      propertyPath: treeClouds
+      value: 
+      objectReference: {fileID: 142094619}
+    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
+        type: 2}
+      propertyPath: treeCloudsCamera
+      value: 
+      objectReference: {fileID: 392378617}
+    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
+        type: 2}
+      propertyPath: whitePanel
+      value: 
+      objectReference: {fileID: 1387649059}
+    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
+        type: 2}
+      propertyPath: cloudRight
+      value: 
+      objectReference: {fileID: 584863375}
+    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
+        type: 2}
+      propertyPath: cloudLeft
+      value: 
+      objectReference: {fileID: 584863374}
+    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
+        type: 2}
+      propertyPath: pigeonGrey
+      value: 
+      objectReference: {fileID: 142094618}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &308082006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,78 +4375,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1542806711654208, guid: 0367241d5e5478e44b5bfb3ac38a1d32,
     type: 2}
   m_PrefabInternal: {fileID: 1387649058}
---- !u!1001 &1405599946
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155606083327744, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: treeCloudsCamera
-      value: 
-      objectReference: {fileID: 392378617}
-    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: whitePanel
-      value: 
-      objectReference: {fileID: 1387649059}
-    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: treeClouds
-      value: 
-      objectReference: {fileID: 142094619}
-    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: pigeonGrey
-      value: 
-      objectReference: {fileID: 142094618}
-    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: cloudRight
-      value: 
-      objectReference: {fileID: 584863375}
-    - target: {fileID: 114336165885762330, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: cloudLeft
-      value: 
-      objectReference: {fileID: 584863374}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1450840318
 Prefab:
   m_ObjectHideFlags: 0
