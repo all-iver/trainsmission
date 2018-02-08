@@ -134,11 +134,13 @@ public class NPC : MonoBehaviour {
         }
 
         //should never happen; just for safety
-        if (Accused == this || Accused == null)
+        if (Accused == null)
             Accused = NPCTracker.FindNPC(NPCTracker.RedHerring);
+		while (Accused == this)
+			Accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
 
-        //first icon represents accusation
-        float rng_vagueness =
+		//first icon represents accusation
+		float rng_vagueness =
             sameTraincar ? Random.Range(0.0f, 0.6f) :
             Random.Range(0.0f, 1.0f)
         ;
