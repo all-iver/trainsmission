@@ -373,8 +373,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treeClouds: {fileID: 0}
   treeCloudsCamera: {fileID: 0}
+  whitePanel: {fileID: 0}
   cloudRight: {fileID: 1041390503946934}
   cloudLeft: {fileID: 1879572816013406}
+  pigeonGrey: {fileID: 0}
 --- !u!114 &114479692622281898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -416,7 +418,6 @@ MonoBehaviour:
   FlappyAudio: {fileID: 245466293044173130, guid: beee55246b0ad4c57adba30ae4e6742a,
     type: 2}
   FlappySource: {fileID: 0}
-  resetButton: {fileID: 0}
 --- !u!124 &124401887171337654
 Behaviour:
   m_ObjectHideFlags: 1
