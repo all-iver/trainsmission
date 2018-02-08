@@ -18,6 +18,8 @@ public class NPCTracker : MonoBehaviour
         Apple,
         Overalls,
         WhiteDress,
+		TwinRed,
+		TwinBlue,
 
         Count,
         None
@@ -37,6 +39,14 @@ public class NPCTracker : MonoBehaviour
     public static ID Culprit;
     public static ID RedHerring;
     public static ID Accused;
+
+	public static bool IsTwin(ID npcid)
+	{
+		return
+			npcid == ID.TwinRed
+			|| npcid == ID.TwinBlue
+		;
+	}
 
     public static void RollCulprit()
     {
@@ -69,7 +79,9 @@ public class NPCTracker : MonoBehaviour
             case ID.Apple: return NPCSpriteCatalog.Inst.Apple;
             case ID.Overalls: return NPCSpriteCatalog.Inst.Overalls;
             case ID.WhiteDress: return NPCSpriteCatalog.Inst.WhiteDress;
-            default: return NPCSpriteCatalog.Inst.Cat;
+			case ID.TwinRed: return NPCSpriteCatalog.Inst.TwinRed;
+			case ID.TwinBlue: return NPCSpriteCatalog.Inst.TwinBlue;
+			default: return NPCSpriteCatalog.Inst.Cat;
         }
     }
 

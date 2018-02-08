@@ -19,4 +19,6 @@ public class NPCSpriteCatalog : ScriptableObject
     public Sprite Apple;
     public Sprite Overalls;
     public Sprite WhiteDress;
+	public Sprite TwinRed;
+	public Sprite TwinBlue;
 }

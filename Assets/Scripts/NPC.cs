@@ -94,6 +94,41 @@ public class NPC : MonoBehaviour {
         bool isCulprit = ID == NPCTracker.Culprit;
         bool sameTraincar = NPCTracker.FindCulprit().GetTraincar() == GetTraincar();
 
+		#region Special Case: Cat & Twins
+		if (ID == NPCTracker.ID.Cat)
+		{
+			if (NPCTracker.IsTwin(NPCTracker.Culprit))
+			{
+				Accused = NPCTracker.FindCulprit();
+				speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.ID.Cat);
+				speech2IsDirection = true;
+				speechEmotion = SpeechEmotion.Scared;
+				return;
+			}
+			else
+			{
+				Accused = this;
+				speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.ID.Cat);
+				speechIcon2 = SpeechHelper.GetIcon_Certainty(false);
+				speechEmotion = SpeechEmotion.Loopy;
+				return;
+			}
+		}
+
+		if (NPCTracker.IsTwin(ID) && NPCTracker.IsTwin(NPCTracker.Culprit))
+		{
+			Accused = NPCTracker.FindNPC(
+				ID == NPCTracker.ID.TwinRed
+				? NPCTracker.ID.TwinBlue
+				: NPCTracker.ID.TwinRed
+			);
+			speechIcon1 = SpeechHelper.GetIcon_Person(Accused.ID);
+			speech2IsDirection = true;
+			speechEmotion = SpeechEmotion.Emphatic;
+			return;
+		}
+		#endregion
+
 		//base certainty
 		float certainty = sameTraincar ? 1.0f : 0.9f;
 
@@ -199,7 +234,7 @@ public class NPC : MonoBehaviour {
         }
         stopped = true;
         Vector2 off = speechOffset;
-        if (spriteRenderer.sprite.name == "cat")
+        if (ID == NPCTracker.ID.Cat)
             off = catSpeechOffset;
 		
         speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble((Vector2)transform.position + off, transform);

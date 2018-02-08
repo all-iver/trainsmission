@@ -88,7 +88,9 @@ public class SpeechHelper : MonoBehaviour
             case NPCTracker.ID.Apple: return SpeechCatalog_Gender.Male;
             case NPCTracker.ID.Overalls: return SpeechCatalog_Gender.Male;
             case NPCTracker.ID.WhiteDress: return SpeechCatalog_Gender.Female;
-            default: return SpeechCatalog_Gender.Male;
+			case NPCTracker.ID.TwinRed: return SpeechCatalog_Gender.Female;
+			case NPCTracker.ID.TwinBlue: return SpeechCatalog_Gender.Female;
+			default: return SpeechCatalog_Gender.Male;
         }
     }
 
@@ -108,7 +110,9 @@ public class SpeechHelper : MonoBehaviour
             case NPCTracker.ID.Apple: return SpeechCatalog_People.Apple;
             case NPCTracker.ID.Overalls: return SpeechCatalog_People.Overalls;
             case NPCTracker.ID.WhiteDress: return SpeechCatalog_People.WhiteDress;
-            default: return UnknownSprite;
+			case NPCTracker.ID.TwinRed: return SpeechCatalog_People.TwinRed;
+			case NPCTracker.ID.TwinBlue: return SpeechCatalog_People.TwinBlue;
+			default: return UnknownSprite;
         }
     }
 
