@@ -215,15 +215,8 @@ public class NPC : MonoBehaviour {
             off = catSpeechOffset;
 		
         speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble((Vector2)transform.position + off, transform);
-		if (ID == NPCTracker.ID.Hobo)
-		{
-			speechBubble.DrunkenAccuse();
-		}
-		else
-		{
-			UpdateSpeech();
-			speechBubble.Say(speechIcon1, speechIcon2, speechEmotion);
-		}
+		UpdateSpeech();
+		speechBubble.Say(speechIcon1, speechIcon2, speechEmotion);
     }
 
     public void BecomeAccused(Vector2 playerPos) {
