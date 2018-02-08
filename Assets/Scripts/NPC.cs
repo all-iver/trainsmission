@@ -94,20 +94,6 @@ public class NPC : MonoBehaviour {
         bool isCulprit = ID == NPCTracker.Culprit;
         bool sameTraincar = NPCTracker.FindCulprit().GetTraincar() == GetTraincar();
 
-		#region Special Case: Cat
-		if (ID == NPCTracker.ID.Cat)
-		{
-			if (isCulprit) speechEmotion = SpeechEmotion.Loopy;
-			else if (sameTraincar) speechEmotion = SpeechEmotion.Scared;
-			else speechEmotion = SpeechEmotion.Loopy;
-
-			Accused = NPCTracker.FindCulprit();
-			speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.ID.Cat);
-			speechIcon2 = SpeechHelper.GetIcon_Certainty(false);
-			return;
-		}
-		#endregion
-
 		//base certainty
 		float certainty = sameTraincar ? 1.0f : 0.9f;
 
