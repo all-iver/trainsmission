@@ -506,6 +506,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114452776770072076, guid: 0a8a5704b5c959a439e78bbce2832585,
+        type: 2}
+      propertyPath: CameraTargets.Array.data[0].TargetTransform
+      value: 
+      objectReference: {fileID: 898176509}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a8a5704b5c959a439e78bbce2832585, type: 2}
   m_IsPrefabParent: 0
