@@ -3815,16 +3815,6 @@ Prefab:
       propertyPath: FlappySource
       value: 
       objectReference: {fileID: 32004330}
-    - target: {fileID: 114354866491355994, guid: 00c936e9f44e04350a217e24bb95a861,
-        type: 2}
-      propertyPath: treeClouds
-      value: 
-      objectReference: {fileID: 1197330134}
-    - target: {fileID: 114354866491355994, guid: 00c936e9f44e04350a217e24bb95a861,
-        type: 2}
-      propertyPath: treeCloudsCamera
-      value: 
-      objectReference: {fileID: 299750480}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00c936e9f44e04350a217e24bb95a861, type: 2}
   m_IsPrefabParent: 0
@@ -4273,26 +4263,6 @@ Prefab:
       propertyPath: pigeonGrey
       value: 
       objectReference: {fileID: 1655158465}
-    - target: {fileID: 61368948849109752, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -57.191235
-      objectReference: {fileID: 0}
-    - target: {fileID: 61368948849109752, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 39.70411
-      objectReference: {fileID: 0}
-    - target: {fileID: 61084640199016124, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 34.90761
-      objectReference: {fileID: 0}
-    - target: {fileID: 61084640199016124, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 21.027138
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
   m_IsPrefabParent: 0

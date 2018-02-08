@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 114339399699797218}
   - component: {fileID: 114479692622281898}
   - component: {fileID: 114712335469479994}
-  - component: {fileID: 114354866491355994}
   m_Layer: 15
   m_Name: Player
   m_TagString: Player
@@ -360,23 +359,6 @@ MonoBehaviour:
   gravityModifier: 0
   maxSpeed: 7
   jumpTakeOffSpeed: 7
---- !u!114 &114354866491355994
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1887594438991428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12af74e0b763ea14a9c256e12ca37c63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  treeClouds: {fileID: 0}
-  treeCloudsCamera: {fileID: 0}
-  whitePanel: {fileID: 0}
-  cloudRight: {fileID: 1041390503946934}
-  cloudLeft: {fileID: 1879572816013406}
-  pigeonGrey: {fileID: 0}
 --- !u!114 &114479692622281898
 MonoBehaviour:
   m_ObjectHideFlags: 1
