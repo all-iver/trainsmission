@@ -23,3 +23,5 @@ MonoBehaviour:
   Apple: {fileID: 21300000, guid: 78e418dd0bd06474ebf82317a0d8230c, type: 3}
   Overalls: {fileID: 21300000, guid: 94103bcff26a9ed42b01b72298fb93b2, type: 3}
   WhiteDress: {fileID: 21300000, guid: fc66d2609f9c640ca986cd0f40ea8d67, type: 3}
+  TwinRed: {fileID: 21300000, guid: c99318ea75b63804d9129f04f20424db, type: 3}
+  TwinBlue: {fileID: 21300000, guid: c99318ea75b63804d9129f04f20424db, type: 3}
