@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2bb6b4e08b5ef54e9ed3d4ea5a7fa60, type: 3}
+  m_Name: _Catalog
+  m_EditorClassIdentifier: 
+  Monocle: {fileID: 11400000, guid: d5ad5fd0ec1ba27439c8123c1b34ef57, type: 2}
+  Waiter: {fileID: 11400000, guid: 9c63932a6bce42f47ae40a4adbc3b570, type: 2}
+  FanLady: {fileID: 11400000, guid: 8afca7e0018eb06449199b8609f49523, type: 2}
+  Hobo: {fileID: 11400000, guid: d5f86f89107bf4d4b95b9a2456da79d0, type: 2}
+  Bumpkin: {fileID: 11400000, guid: 95e971be33f956d418502797942f9fa7, type: 2}
+  Cowgirl: {fileID: 11400000, guid: 71dd74e15586f284099558851d9e13b7, type: 2}
+  Cat: {fileID: 11400000, guid: 49d21a0489322874d9a251cd777cb598, type: 2}
+  Conductor: {fileID: 11400000, guid: b1a63d5c4e4a65842898a10de9cd468f, type: 2}
+  Prospector: {fileID: 11400000, guid: b3b777ff29b909f4ba5a870e718d6cef, type: 2}
+  Apple: {fileID: 11400000, guid: 434463f9ca8cc9a49ba73821c0142876, type: 2}
+  Overalls: {fileID: 11400000, guid: b5853ec964a10a845a60d091c9d97e0f, type: 2}
+  WhiteDress: {fileID: 11400000, guid: 1961bce9509f0ea4a812018093de2332, type: 2}
+  TwinRed: {fileID: 11400000, guid: 8964567247d4a134e9544f6d655665db, type: 2}
+  TwinBlue: {fileID: 11400000, guid: c91025344b1f48f4f835003847c2ebff, type: 2}

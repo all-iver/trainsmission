@@ -18,7 +18,7 @@ public class SpeechHelper : MonoBehaviour
     private static SpeechCatalog_People SpeechCatalog_People;
     private static SpeechCatalog_Directions SpeechCatalog_Directions;
     private static SpeechCatalog_Certainty SpeechCatalog_Certainty;
-    private static SpeechCatalog_Gender SpeechCatalog_Gender;
+    private static NPCTraitList_Catalog TraitList;
     public static Sprite UnknownSprite;
 	public static Sprite DrunkSprite;
 
@@ -26,7 +26,7 @@ public class SpeechHelper : MonoBehaviour
     [SerializeField] private SpeechCatalog_People SpeechCatalog_People_Cached;
     [SerializeField] private SpeechCatalog_Directions SpeechCatalog_Directions_Cached;
     [SerializeField] private SpeechCatalog_Certainty SpeechCatalog_Certainty_Cached;
-    [SerializeField] private SpeechCatalog_Gender SpeechCatalog_Gender_Cached;
+    [SerializeField] private NPCTraitList_Catalog TraitList_Cached;
 	[SerializeField] private Sprite DrunkSprite_Cached;
 	[SerializeField] private Sprite UnknownSprite_Cached;
 
@@ -36,7 +36,7 @@ public class SpeechHelper : MonoBehaviour
         SpeechCatalog_People = SpeechCatalog_People_Cached;
         SpeechCatalog_Directions = SpeechCatalog_Directions_Cached;
         SpeechCatalog_Certainty = SpeechCatalog_Certainty_Cached;
-        SpeechCatalog_Gender = SpeechCatalog_Gender_Cached;
+        TraitList = TraitList_Cached;
         UnknownSprite = UnknownSprite_Cached;
 		DrunkSprite = DrunkSprite_Cached;
 	}
@@ -72,25 +72,25 @@ public class SpeechHelper : MonoBehaviour
         return GetIcon_Person(NPCTracker.GetRandomNPCID());
     }
 
-    public static Sprite GetIcon_Gender(NPCTracker.ID id)
+    public static NPCTraitList GetTraitList(NPCTracker.ID id)
     {
         switch (id)
         {
-            case NPCTracker.ID.Monocle: return SpeechCatalog_Gender.Male;
-            case NPCTracker.ID.Waiter: return SpeechCatalog_Gender.Male;
-            case NPCTracker.ID.FanLady: return SpeechCatalog_Gender.Female;
-            case NPCTracker.ID.Hobo: return SpeechCatalog_Gender.Male;
-            case NPCTracker.ID.Bumpkin: return SpeechCatalog_Gender.Male;
-            case NPCTracker.ID.Cowgirl: return SpeechCatalog_Gender.Female;
-            case NPCTracker.ID.Cat: return GetIcon_Person(id);
-            case NPCTracker.ID.Conductor: return SpeechCatalog_Gender.Male;
-            case NPCTracker.ID.Prospector: return SpeechCatalog_Gender.Male;
-            case NPCTracker.ID.Apple: return SpeechCatalog_Gender.Male;
-            case NPCTracker.ID.Overalls: return SpeechCatalog_Gender.Male;
-            case NPCTracker.ID.WhiteDress: return SpeechCatalog_Gender.Female;
-			case NPCTracker.ID.TwinRed: return SpeechCatalog_Gender.Female;
-			case NPCTracker.ID.TwinBlue: return SpeechCatalog_Gender.Female;
-			default: return SpeechCatalog_Gender.Male;
+			case NPCTracker.ID.Monocle: return TraitList.Monocle;
+			case NPCTracker.ID.Waiter: return TraitList.Waiter;
+			case NPCTracker.ID.FanLady: return TraitList.FanLady;
+			case NPCTracker.ID.Hobo: return TraitList.Hobo;
+			case NPCTracker.ID.Bumpkin: return TraitList.Bumpkin;
+			case NPCTracker.ID.Cowgirl: return TraitList.Cowgirl;
+			case NPCTracker.ID.Cat: return TraitList.Cat;
+			case NPCTracker.ID.Conductor: return TraitList.Conductor;
+			case NPCTracker.ID.Prospector: return TraitList.Prospector;
+			case NPCTracker.ID.Apple: return TraitList.Apple;
+			case NPCTracker.ID.Overalls: return TraitList.Overalls;
+			case NPCTracker.ID.WhiteDress: return TraitList.WhiteDress;
+			case NPCTracker.ID.TwinRed: return TraitList.TwinRed;
+			case NPCTracker.ID.TwinBlue: return TraitList.TwinBlue;
+			default: return null;
         }
     }
 

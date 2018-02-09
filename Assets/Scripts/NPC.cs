@@ -139,13 +139,13 @@ public class NPC : MonoBehaviour {
             Random.Range(0.0f, 1.0f)
         ;
 
-        if (rng_wrongAccusation < 0.5f)
+        if (rng_wrongAccusation < 0.4f)
         {
             Accused = NPCTracker.FindCulprit();
         }
-        else if (rng_wrongAccusation < 0.75f)
+        else if (rng_wrongAccusation < 0.7f)
         {
-            accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
+            Accused = NPCTracker.FindNPC(NPCTracker.GetRandomNPCID());
             certainty -= 0.5f;
         }
         else
@@ -165,14 +165,15 @@ public class NPC : MonoBehaviour {
             sameTraincar ? Random.Range(0.0f, 0.6f) :
             Random.Range(0.0f, 1.0f)
         ;
-        if (rng_vagueness < 0.4f)
+        if (rng_vagueness < 0.3f)
         {
             speechIcon1 = SpeechHelper.GetIcon_Person(Accused.ID);
             certainty -= 0.2f;
         }
-        else if (rng_vagueness < 0.6f)
+        else if (rng_vagueness < 0.7f)
         {
-            speechIcon1 = SpeechHelper.GetIcon_Gender(Accused.ID);
+			var traits = SpeechHelper.GetTraitList(Accused.ID).Icons;
+			speechIcon1 = traits[Random.Range(0, traits.Length)];
         }
         else
         {
