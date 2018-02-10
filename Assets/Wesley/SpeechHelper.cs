@@ -18,7 +18,8 @@ public class SpeechHelper : MonoBehaviour
     private static SpeechCatalog_People SpeechCatalog_People;
     private static SpeechCatalog_Directions SpeechCatalog_Directions;
     private static SpeechCatalog_Certainty SpeechCatalog_Certainty;
-    private static NPCTraitList_Catalog TraitList;
+	public static SpeechCatalog_Misc MiscIcons;
+	private static NPCTraitList_Catalog TraitList;
     public static Sprite UnknownSprite;
 	public static Sprite DrunkSprite;
 
@@ -26,7 +27,8 @@ public class SpeechHelper : MonoBehaviour
     [SerializeField] private SpeechCatalog_People SpeechCatalog_People_Cached;
     [SerializeField] private SpeechCatalog_Directions SpeechCatalog_Directions_Cached;
     [SerializeField] private SpeechCatalog_Certainty SpeechCatalog_Certainty_Cached;
-    [SerializeField] private NPCTraitList_Catalog TraitList_Cached;
+	[SerializeField] private SpeechCatalog_Misc SpeechCatalog_Misc_Cached;
+	[SerializeField] private NPCTraitList_Catalog TraitList_Cached;
 	[SerializeField] private Sprite DrunkSprite_Cached;
 	[SerializeField] private Sprite UnknownSprite_Cached;
 
@@ -36,7 +38,8 @@ public class SpeechHelper : MonoBehaviour
         SpeechCatalog_People = SpeechCatalog_People_Cached;
         SpeechCatalog_Directions = SpeechCatalog_Directions_Cached;
         SpeechCatalog_Certainty = SpeechCatalog_Certainty_Cached;
-        TraitList = TraitList_Cached;
+		MiscIcons = SpeechCatalog_Misc_Cached;
+		TraitList = TraitList_Cached;
         UnknownSprite = UnknownSprite_Cached;
 		DrunkSprite = DrunkSprite_Cached;
 	}

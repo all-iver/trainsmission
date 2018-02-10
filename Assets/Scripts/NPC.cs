@@ -109,7 +109,7 @@ public class NPC : MonoBehaviour {
 			{
 				Accused = this;
 				speechIcon1 = SpeechHelper.GetIcon_Person(NPCTracker.ID.Cat);
-				speechIcon2 = SpeechHelper.GetIcon_Certainty(false);
+				speechIcon2 = SpeechHelper.MiscIcons.Meow;
 				speechEmotion = SpeechEmotion.Loopy;
 				return;
 			}

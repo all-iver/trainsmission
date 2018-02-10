@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d239c2ef348b24cae4fee95b745b74, type: 3}
+  m_Name: SpeechCatalog_Misc
+  m_EditorClassIdentifier: 
+  Heart: {fileID: 21300000, guid: 6b678f13d2e6e3341915f4cbc6a6dff2, type: 3}
+  Note: {fileID: 21300000, guid: 6e74b483118e5bb41a8e9cad1377f915, type: 3}
+  Alcohol: {fileID: 21300000, guid: a3994ea5f63ad4f3ba0e651ec5e49494, type: 3}
+  Meow: {fileID: 21300000, guid: 04b5eaef70926074b9b36aeb1692334c, type: 3}
