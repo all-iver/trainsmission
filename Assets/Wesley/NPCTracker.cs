@@ -32,9 +32,10 @@ public class NPCTracker : MonoBehaviour
     private void Awake()
     {
         NPCSpriteCatalog.Inst = SpriteCatalog;
-        if (reroll)
+
+		if (reroll)
             RollCulprit();
-    }
+	}
 
     public static ID Culprit;
     public static ID RedHerring;
@@ -51,6 +52,11 @@ public class NPCTracker : MonoBehaviour
     public static void RollCulprit()
     {
         Culprit = GetRandomNPCID();
+
+		//both twins feel the same, so they should only occur roughly half the time
+		if (IsTwin(Culprit) && Random.value < 0.5f)
+			Culprit = GetRandomNPCID();
+
         RedHerring = Culprit;
         while (RedHerring == Culprit)
             RedHerring = GetRandomNPCID();
