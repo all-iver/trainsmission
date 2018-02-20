@@ -9,6 +9,7 @@ public class Title : MonoBehaviour {
     public GameObject[] cards;
 	public GameObject skipIntro;
     public AudioSource startAudio;
+	public AudioSource ambiance;
 
     void Start() {
         foreach (GameObject go in cards)
@@ -23,7 +24,10 @@ public class Title : MonoBehaviour {
     void Update() {
         if (Input.GetButtonDown("Jump")) {
             if (count == -1)
+			{
                 startAudio.gameObject.SetActive(true);
+				ambiance.gameObject.SetActive(false);
+			}
 			skipIntro.SetActive(true);
 
             count ++;
