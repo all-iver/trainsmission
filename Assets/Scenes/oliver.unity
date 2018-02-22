@@ -4433,6 +4433,12 @@ Prefab:
       propertyPath: pigeonGrey
       value: 
       objectReference: {fileID: 142094618}
+    - target: {fileID: 212360267509139890, guid: 125746d7f4cb345b0b84a71c33d6ac4b,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17698a27226b06b41a95e41acd6299de,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 125746d7f4cb345b0b84a71c33d6ac4b, type: 2}
   m_IsPrefabParent: 0
