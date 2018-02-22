@@ -7286,6 +7286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pigeon: {fileID: 1897221569701018, guid: 924e0cf6a919b482ba36d79525e91b90, type: 2}
+  bDoubleAnimator: {fileID: 9100000, guid: a6840b5a572ae4c1081383ca3608cdc0, type: 2}
 --- !u!114 &114616248517841804
 MonoBehaviour:
   m_ObjectHideFlags: 1

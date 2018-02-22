@@ -30,7 +30,7 @@ public class FlappyEnding : MonoBehaviour {
 		if (collision.CompareTag("Player"))
 		{
 			player = collision.gameObject;
-			Debug.Log("TriggerFlappyEnding");
+			//Debug.Log("TriggerFlappyEnding");
 			StartCoroutine(Ending());
 		}
 	}
@@ -88,7 +88,7 @@ public class FlappyEnding : MonoBehaviour {
 		//Debug.Log("newPos :" + newPos);
 
 		yield return new WaitForSeconds(1f);
-		Debug.Log("moving clouds");
+		//Debug.Log("moving clouds");
 
 		StartCoroutine(FadeSR(0.0f, 5f, cloudLeft));
 		StartCoroutine(FadeSR(0.0f, 5f, cloudRight));

@@ -70,6 +70,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60df31ed5715e0c418ce4b14e83169be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standing: {fileID: 0}
+  twitterGrey: {fileID: 0}
+  twitterBrown: {fileID: 0}
+  playerAnimator: {fileID: 9100000, guid: a79a441b019a1ca42bb16cf11368f9ab, type: 2}
 --- !u!212 &212480749714031660
 SpriteRenderer:
   m_ObjectHideFlags: 1
