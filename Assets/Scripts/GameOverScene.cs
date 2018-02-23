@@ -70,8 +70,9 @@ public class GameOverScene : MonoBehaviour {
         if (tweener != null)
             return;
         timer += Time.deltaTime;
-        if ((timer >= 2 && state == 0) || Input.GetButtonDown("Jump")) {
-            state ++;
+        if ((timer >= 2) || Input.GetButtonDown("Jump")) {
+			timer = 0;
+			state ++;
             if (state == 1) {
                 bubble.gameObject.SetActive(false);
                 catBubble.gameObject.SetActive(false);
@@ -92,7 +93,7 @@ public class GameOverScene : MonoBehaviour {
             if (state == 5) {
                 UnityEngine.SceneManagement.SceneManager.LoadScene(titleScene);
             }
-        }
+		}
     }
 	
 }
