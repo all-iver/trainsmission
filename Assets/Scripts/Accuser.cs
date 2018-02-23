@@ -6,7 +6,7 @@ public class Accuser : MonoBehaviour {
 
     NPC current;
     bool accusing;
-    SpeechBubble speechBubble;
+    AccusationBubble speechBubble;
     public Transform speechOffset;
 
     public bool IsAccusing() {
@@ -40,44 +40,22 @@ public class Accuser : MonoBehaviour {
         current = nearest;
         current.StopAndSpeak(transform.position);
     }
-
-    // void OnTriggerEnter2D(Collider2D other) {
-    //     if (current)
-    //         return;
-    //     NPC npc = other.gameObject.GetComponent<NPC>();
-    //     if (!npc)
-    //         return;
-    //     current = npc;
-    //     current.StopAndSpeak(transform.position);
-    // }
-
-    // void OnTriggerExit2D(Collider2D other) {
-    //     if (accusing)
-    //         return;
-    //     NPC npc = other.gameObject.GetComponent<NPC>();
-    //     if (!npc)
-    //         return;
-    //     if (npc == current) {
-    //         current.EndSpeaking();
-    //         current = null;
-    //     }
-    // }
-
+	
     IEnumerator EndGame() {
         yield return new WaitForSeconds(3);
         UnityEngine.SceneManagement.SceneManager.LoadScene("EndGame");
     }
 
+	bool AccusationAborted = false;
+	float AccusationWindup = 0.0f;
+	NPCTracker.ID AccusedNPC = NPCTracker.ID.None;
+
     void AccuseCurrent() {
-        if (accusing || !current || current.ID == NPCTracker.ID.None)
-            return;
-        
         Animator animator = GetComponent<Animator>();
         animator.SetBool("Grounded", true);
         animator.SetBool("Moving", false);
 
-        speechBubble = FindObjectOfType<SpeechSpawner>().SpawnBubble(speechOffset.position, transform);
-		speechBubble.Accuse();
+		speechBubble.OnAccusationMade();
 
         NPCTracker.Accused = current.ID;
         NPCTracker.AccusedCorrectly();
@@ -87,12 +65,56 @@ public class Accuser : MonoBehaviour {
         StartCoroutine(EndGame());
     }
 
+	void UpdateAccusationWindup()
+	{
+		bool buttonHeld = Input.GetButton("Jump");
+		bool buttonPressed = Input.GetButtonDown("Jump");
+
+		if (buttonHeld && !AccusationAborted)
+		{
+			if (buttonPressed && current)
+			{
+				AccusedNPC = current.ID;
+				speechBubble = FindObjectOfType<SpeechSpawner>().SpawnAccusationBubble(speechOffset.position, transform);
+			}
+
+			if (!current || current.ID != AccusedNPC)
+			{
+				AccusationAborted = true;
+			}
+			else if (AccusationWindup < 1.0f)
+			{
+				AccusationWindup = Mathf.Clamp01(AccusationWindup + Time.deltaTime / 1.5f);
+				speechBubble.ShowAccusationWindup(AccusationWindup);
+			}
+			else
+			{
+				AccuseCurrent();
+			}
+		}
+		else
+		{
+			if (!buttonHeld)
+			{
+				AccusationAborted = false;
+			}
+
+			if (speechBubble != null)
+			{
+				speechBubble.Close();
+				speechBubble = null;
+			}
+
+			AccusationWindup = 0.0f;
+			AccusedNPC = NPCTracker.ID.None;
+		}
+	}
+
     void Update() {
         if (accusing)
             return;
         TalkToNearest();
-        if (Input.GetButtonDown("Jump"))
-            AccuseCurrent();
+		UpdateAccusationWindup();
     }
 
 }

@@ -259,6 +259,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114061182747586274, guid: 08d6a470543bd4a7f93a88800ce9c804,
+        type: 2}
+      propertyPath: accusationBubble
+      value: 
+      objectReference: {fileID: 114728310959465530, guid: ff765a38348f99b4ca356f53843912c5,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08d6a470543bd4a7f93a88800ce9c804, type: 2}
   m_IsPrefabParent: 0

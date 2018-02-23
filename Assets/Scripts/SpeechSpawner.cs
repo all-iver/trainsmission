@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SpeechSpawner : MonoBehaviour
 {
 	public SpeechBubble speechBubble;
+	public AccusationBubble accusationBubble;
     public Sprite accuseSprite;
 
 	public SpeechBubble SpawnBubble(Vector2 pos, Transform parent)
@@ -15,5 +16,13 @@ public class SpeechSpawner : MonoBehaviour
 		bubble.transform.position = pos;
 		bubble.transform.SetParent(parent);
 		return bubble.GetComponent<SpeechBubble>();
+	}
+
+	public AccusationBubble SpawnAccusationBubble(Vector2 pos, Transform parent)
+	{
+		GameObject bubble = Instantiate(accusationBubble).gameObject;
+		bubble.transform.position = pos;
+		bubble.transform.SetParent(parent);
+		return bubble.GetComponent<AccusationBubble>();
 	}
 }
